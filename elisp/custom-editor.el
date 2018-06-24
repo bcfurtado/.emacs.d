@@ -17,6 +17,9 @@
          ("C-M-=" . er/expand-region)
          ("C-M--" . er/contract-region)))
 
+(use-package smartparens
+  :ensure t
+  :bind ("M-s" . sp-splice-sexp))
 
 
 (provide 'custom-editor)
