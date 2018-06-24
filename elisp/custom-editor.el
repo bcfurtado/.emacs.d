@@ -6,6 +6,7 @@
 (use-package bind-key
   :ensure t
   :config
+  (bind-key "C-c d" 'duplicate-current-line-or-region)
   (bind-key "M-j" (λ (join-line -1)))
   )
 
