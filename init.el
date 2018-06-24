@@ -17,6 +17,7 @@
 
 
 (require 'custom-setup)
+(require 'custom-functions)
 (require 'custom-ui)
 (require 'custom-vc)
 (require 'custom-editor)
