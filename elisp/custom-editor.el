@@ -10,6 +10,12 @@
   (bind-key "M-j" (λ (join-line -1)))
   )
 
+(use-package expand-region
+  :ensure t
+  :demand t
+  :bind (("C-M-SPC" . er/expand-region)
+         ("C-M-=" . er/expand-region)
+         ("C-M--" . er/contract-region)))
 
 
 
