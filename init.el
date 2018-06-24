@@ -12,3 +12,17 @@
   )
 
 (setq x-super-keysym 'meta)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+(package-initialize)
+
+;; ensure that use-package is installed
+(setq package-enable-at-startup nil)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
