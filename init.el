@@ -26,3 +26,7 @@
   (package-install 'use-package))
 
 (require 'use-package)
+
+
+(use-package magit
+  :bind ("C-x g" . magit-status))
