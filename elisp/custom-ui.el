@@ -22,4 +22,13 @@
 ;;   :init
 ;;   (load-theme 'monokai t))
 
+
+;;; Define default font size for the frames
+(defun set-default-font-zize (frame)
+    (set-face-attribute 'default frame :height 150))
+
+(set-default-font-zize (selected-frame))
+(add-hook 'after-make-frame-functions 'set-default-font-zize)
+
+
 (provide 'custom-ui)
