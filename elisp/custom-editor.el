@@ -26,6 +26,14 @@
   (smartparens-strict-mode 1)
   (require 'smartparens-config))
 
+(use-package highlight-symbol
+  :ensure t
+  :diminish highlight-symbol-mode
+  :bind (("M-]" . highlight-symbol-next)
+         ("M-[" . highlight-symbol-prev))
+  :init
+  (add-hook 'prog-mode-hook (λ (highlight-symbol-mode t))))
+
 (use-package counsel
   :ensure t
   :bind (("C-s" . swiper)
