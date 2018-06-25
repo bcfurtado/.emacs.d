@@ -19,7 +19,12 @@
 
 (use-package smartparens
   :ensure t
-  :bind ("M-s" . sp-splice-sexp))
+  :diminish smartparens-mode
+  :bind ("M-s" . sp-splice-sexp)
+  :init
+  (smartparens-global-mode 1)
+  (smartparens-strict-mode 1)
+  (require 'smartparens-config))
 
 
 (provide 'custom-editor)
