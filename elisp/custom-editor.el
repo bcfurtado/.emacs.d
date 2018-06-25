@@ -26,5 +26,16 @@
   (smartparens-strict-mode 1)
   (require 'smartparens-config))
 
+(use-package counsel
+  :ensure t
+  :bind (("C-s" . swiper)
+         ("C-x C-f" . counsel-find-file)
+         ("M-x" . counsel-M-x)
+         ("M-i" . counsel-imenu)
+         ("C-c s a" . counsel-ag)
+         ("C-c s g" . counsel-git-grep))
+  :config
+  (ivy-mode t))
+
 
 (provide 'custom-editor)
