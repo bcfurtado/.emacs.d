@@ -31,4 +31,10 @@
 (add-hook 'after-make-frame-functions 'set-default-font-zize)
 
 
+;; This package allow us hide or abbreviate the mode line displays of
+;; minor-modes.
+(use-package diminish
+  :ensure t)
+
+
 (provide 'custom-ui)
