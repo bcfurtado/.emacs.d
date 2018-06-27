@@ -21,3 +21,5 @@
 (require 'custom-ui)
 (require 'custom-vc)
 (require 'custom-editor)
+(require 'custom-workspace)
+
