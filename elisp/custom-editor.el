@@ -45,5 +45,10 @@
   :config
   (ivy-mode t))
 
+(use-package zoom
+  :ensure t
+  :diminish zoom-mode
+  :config (zoom-mode t))
+
 
 (provide 'custom-editor)
