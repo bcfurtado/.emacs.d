@@ -22,4 +22,5 @@
 (require 'custom-vc)
 (require 'custom-editor)
 (require 'custom-workspace)
+(require 'custom-python)
 
