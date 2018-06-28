@@ -18,6 +18,7 @@
 
 (require 'custom-setup)
 (require 'custom-functions)
+(require 'custom-keybinds)
 (require 'custom-ui)
 (require 'custom-vc)
 (require 'custom-editor)
