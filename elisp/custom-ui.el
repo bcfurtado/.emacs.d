@@ -37,6 +37,9 @@
 (add-hook 'window-setup-hook 'set-frame-maximized)
 (add-hook 'after-make-frame-functions 'set-frame-maximized)
 
+;; Stop cursor blinking
+(blink-cursor-mode -1)
+
 
 
 ;; This package allow us hide or abbreviate the mode line displays of
