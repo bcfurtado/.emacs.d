@@ -55,4 +55,9 @@
          ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
          ("C-c R" . crux-rename-file-and-buffer)))
 
+(use-package linum
+  :config
+  (setq linum-format " %3d ")
+  (add-hook 'prog-mode-hook 'linum-mode))
+
 (provide 'custom-editor)
