@@ -12,6 +12,7 @@
 
 (delete-selection-mode t)		; Replace selected text after paste
 (setq ring-bell-function 'ignore)	; No bell please
+(defalias 'yes-or-no-p 'y-or-n-p)	; Use y or n to anwser confirmations
 
 
 (provide 'custom-setup)
