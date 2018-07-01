@@ -50,5 +50,9 @@
   :diminish zoom-mode
   :config (zoom-mode t))
 
+(use-package crux
+  :ensure t
+  :bind ("C-a" . 'crux-move-beginning-of-line))
+
 
 (provide 'custom-editor)
