@@ -10,12 +10,8 @@
 (when *is-a-linux*
   (setq x-super-keysym 'meta))
 
+(delete-selection-mode t)		; Replace selected text after paste
 
-;; If you enable Delete Selection mode, a minor mode, then inserting
-;; text while the mark is active causes the selected text to be
-;; deleted first. This also deactivates the mark. Many graphical
-;; applications follow this convention, but Emacs does not.
-(delete-selection-mode t)
 
 
 (provide 'custom-setup)
