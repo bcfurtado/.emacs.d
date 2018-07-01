@@ -60,4 +60,14 @@
   (setq linum-format " %3d ")
   (add-hook 'prog-mode-hook 'linum-mode))
 
+
+;; No tabs
+(setq tab-width 4)
+(setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
+
+;; No whitespaces
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (provide 'custom-editor)
