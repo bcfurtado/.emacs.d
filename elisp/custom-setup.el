@@ -8,7 +8,7 @@
   )
 
 (when *is-a-linux*
-  (setq x-super-keysym 'meta))
+  (setq x-super-keysym 'meta))		; Set Super key as Meta
 
 (delete-selection-mode t)		; Replace selected text after paste
 (setq ring-bell-function 'ignore)	; No bell please
