@@ -50,9 +50,9 @@
 
 (use-package crux
   :ensure t
-  :bind (("C-a" . 'crux-move-beginning-of-line)
-         ("C-c d" . 'crux-duplicate-current-line-or-region)
-         ("C-c M-d" . 'crux-duplicate-and-comment-current-line-or-region)
-         ("C-c R" . 'crux-rename-file-and-buffer)))
+  :bind (("C-a" . crux-move-beginning-of-line)
+         ("C-c d" . crux-duplicate-current-line-or-region)
+         ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
+         ("C-c R" . crux-rename-file-and-buffer)))
 
 (provide 'custom-editor)
