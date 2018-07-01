@@ -11,7 +11,7 @@
   (setq x-super-keysym 'meta))
 
 (delete-selection-mode t)		; Replace selected text after paste
-
+(setq ring-bell-function 'ignore)	; No bell please
 
 
 (provide 'custom-setup)
