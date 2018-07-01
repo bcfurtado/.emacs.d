@@ -6,9 +6,7 @@
 (use-package bind-key
   :ensure t
   :config
-  (bind-key "C-c d" 'duplicate-current-line-or-region)
-  (bind-key "M-j" (λ (join-line -1)))
-  )
+  (bind-key "M-j" (λ (join-line -1))))
 
 (use-package expand-region
   :ensure t
@@ -52,7 +50,8 @@
 
 (use-package crux
   :ensure t
-  :bind ("C-a" . 'crux-move-beginning-of-line))
+  :bind (("C-a" . 'crux-move-beginning-of-line)
+	 ("C-c d" . 'crux-duplicate-current-line-or-region)))
 
 
 (provide 'custom-editor)
