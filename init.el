@@ -22,5 +22,6 @@
 (require 'custom-ui)
 (require 'custom-vc)
 (require 'custom-editor)
+(require 'custom-misc)
 (require 'custom-workspace)
 (require 'custom-python)
