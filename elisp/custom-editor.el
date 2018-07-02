@@ -40,7 +40,8 @@
          ("M-x" . counsel-M-x)
          ("M-i" . counsel-imenu)
          ("C-c s a" . counsel-ag)
-         ("C-c s g" . counsel-git-grep))
+         ("C-c s g" . counsel-git-grep)
+         ("C-c s r" . counsel-rg))
   :config
   (ivy-mode t))
 
