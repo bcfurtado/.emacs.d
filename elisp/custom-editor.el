@@ -20,8 +20,9 @@
   :diminish smartparens-mode
   :bind ("M-s" . sp-splice-sexp)
   :init
-  (smartparens-global-mode 1)
-  (smartparens-strict-mode 1)
+  (smartparens-global-mode t)
+  (smartparens-strict-mode t)
+  (show-smartparens-global-mode t)
   (require 'smartparens-config))
 
 (use-package highlight-symbol
