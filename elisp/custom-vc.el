@@ -19,4 +19,8 @@
     (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
     (add-hook 'dired-mode-hook 'diff-hl-dired-mode-unless-remote))
 
+(use-package browse-at-remote
+  :ensure t
+  :bind ("C-c v g" . browse-at-remote))
+
 (provide 'custom-vc)
