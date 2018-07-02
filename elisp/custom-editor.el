@@ -67,6 +67,8 @@
   (which-key-mode t)
   (which-key-setup-side-window-right))
 
+(use-package ibuffer
+  :bind ("C-x C-b" . ibuffer))
 
 ;; No tabs
 (setq tab-width 4)
