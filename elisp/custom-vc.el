@@ -23,4 +23,9 @@
   :ensure t
   :bind ("C-c v g" . browse-at-remote))
 
+(use-package ibuffer-vc
+  :ensure t
+  :config
+  (add-hook 'ibuffer-mode-hook 'ibuffer-vc-set-filter-groups-by-vc-root))
+
 (provide 'custom-vc)
