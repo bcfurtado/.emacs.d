@@ -7,4 +7,9 @@
 (use-package projectile-ripgrep
   :ensure t)
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode t))
+
 (provide 'custom-workspace)
