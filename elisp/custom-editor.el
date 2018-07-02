@@ -60,6 +60,13 @@
   (setq linum-format " %3d ")
   (add-hook 'prog-mode-hook 'linum-mode))
 
+(use-package which-key
+  :ensure t
+  :diminish which-key-mode
+  :config
+  (which-key-mode t)
+  (which-key-setup-side-window-right))
+
 
 ;; No tabs
 (setq tab-width 4)
