@@ -24,4 +24,8 @@
 (require 'custom-editor)
 (require 'custom-misc)
 (require 'custom-workspace)
+(require 'custom-web)
 (require 'custom-python)
+
+
+(split-window-horizontally)
