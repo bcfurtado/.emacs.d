@@ -1,4 +1,5 @@
 (use-package projectile
+  :load-path "vendor/projectile"
   :ensure t
   :init
   (projectile-global-mode t)
