@@ -13,4 +13,7 @@
   :config
   (editorconfig-mode t))
 
+(use-package flycheck
+  :ensure t)
+
 (provide 'custom-workspace)

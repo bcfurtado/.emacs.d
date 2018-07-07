@@ -4,8 +4,14 @@
 (when *is-a-mac*
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'none)
-  (setq default-input-method "MacOSX")
-  )
+  (setq default-input-method "MacOSX"))
+
+(use-package exec-path-from-shell
+  :ensure t
+  :defer 5
+  :if *is-a-mac*
+  :config
+  (exec-path-from-shell-initialize))
 
 (when *is-a-linux*
   (setq x-super-keysym 'meta))		; Set Super key as Meta
