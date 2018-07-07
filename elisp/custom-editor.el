@@ -72,6 +72,13 @@
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
 
+(use-package undo-tree
+  :ensure t
+  :diminish undo-tree-mode
+  :config
+  (global-undo-tree-mode))
+
+
 ;; No tabs
 (setq tab-width 4)
 (setq default-tab-width 4)
