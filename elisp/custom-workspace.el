@@ -18,4 +18,26 @@
   :ensure t
   :diminish flycheck-mode)
 
+(use-package company
+  :ensure t
+  :config
+  (company-mode))
+
+(use-package company-lsp
+  :ensure t
+  :config
+  (push 'company-lsp company-backends))
+
+(use-package lsp-mode
+  :ensure t
+  :config
+  (require 'lsp-imenu)
+  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
+
+(use-package lsp-ui
+    :ensure t
+    :config
+    (setq lsp-ui-sideline-ignore-duplicate t)
+    (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
 (provide 'custom-workspace)
