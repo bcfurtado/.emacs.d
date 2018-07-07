@@ -32,17 +32,6 @@
   (add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
 
   ;; get lsp-python-enable defined
-  (defun find-python-project-directory-root (dir)
-    (let ((root-files-identifiers (concat "setup.py\\|"
-                                          "requirements.txt\\|"
-                                          "Pipfile\\|"
-                                          "setup.cfg\\|"
-                                          "tox.ini\\|"
-                                          ".git$\\|"
-                                          "__init__.py\\|"
-                                          "__main__.py")))
-      (directory-files dir nil root-files-identifiers)))
-
   (lsp-define-stdio-client lsp-python "python"
                            (lsp-make-traverser #'find-python-project-directory-root)
                            '("pyls"))

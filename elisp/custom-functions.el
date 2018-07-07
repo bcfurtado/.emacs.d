@@ -42,5 +42,16 @@
     (goto-char (point-min))
     (flush-lines "import i?pu?db; +i?pu?db.set_trace().*$")))
 
+(defun find-python-project-directory-root (dir)
+  (let ((root-files-identifiers (concat "setup.py\\|"
+                                        "requirements.txt\\|"
+                                        "Pipfile\\|"
+                                        "setup.cfg\\|"
+                                        "tox.ini\\|"
+                                        ".git$\\|"
+                                        "__init__.py\\|"
+                                        "__main__.py")))
+    (directory-files dir nil root-files-identifiers)))
+
 
 (provide 'custom-functions)
