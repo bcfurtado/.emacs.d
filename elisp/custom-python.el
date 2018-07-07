@@ -8,6 +8,9 @@
 (use-package pyvenv
   :ensure t)
 
+(use-package auto-virtualenv
+  :ensure t)
+
 (use-package company-lsp
   :ensure t
   :config
@@ -20,18 +23,23 @@
   ;; make sure we have lsp-imenu everywhere we have LSP
   (require 'lsp-imenu)
   (add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
+
   ;; get lsp-python-enable defined
-  ;; NB: use either projectile-project-root or ffip-get-project-root-directory
-  ;;     or any other function that can be used to find the root directory of a project
+  (defun find-python-project-directory-root (dir)
+    (let ((root-files-identifiers (concat "setup.py\\|"
+                                          "requirements.txt\\|"
+                                          "Pipfile\\|"
+                                          "setup.cfg\\|"
+                                          "tox.ini\\|"
+                                          ".git$\\|"
+                                          "__init__.py\\|"
+                                          "__main__.py")))
+      (directory-files dir nil root-files-identifiers)))
+
   (lsp-define-stdio-client lsp-python "python"
-                           #'projectile-project-root
+                           (lsp-make-traverser #'find-python-project-directory-root)
                            '("pyls"))
 
-  ;; make sure this is activated when python-mode is activated
-  ;; lsp-python-enable is created by macro above
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (lsp-python-enable)))
 
   ;; lsp extras
   (use-package lsp-ui
@@ -59,5 +67,13 @@
   (setq dired-omit-files
     (concat dired-omit-files "$\\|^__pycache__$\\|^\\.pyc$\\|^\\.DS_Store$"))
   )
+
+(defun custom-python-mode-hook ()
+  ;; The order is important here. We need enable the virtualenv first
+  ;; and then enabled lsp-python
+  (auto-virtualenv-set-virtualenv)
+  (lsp-python-enable))
+
+(add-hook 'python-mode-hook #'custom-python-mode-hook)
 
 (provide 'custom-python)
