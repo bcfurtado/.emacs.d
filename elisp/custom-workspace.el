@@ -10,10 +10,12 @@
 
 (use-package editorconfig
   :ensure t
+  :diminish editorconfig-mode
   :config
   (editorconfig-mode t))
 
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :diminish flycheck-mode)
 
 (provide 'custom-workspace)

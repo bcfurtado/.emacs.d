@@ -33,6 +33,12 @@
   :init
   (add-hook 'prog-mode-hook (λ (highlight-symbol-mode t))))
 
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :config
+  (ivy-mode t))
+
 (use-package counsel
   :ensure t
   :bind (("C-s" . swiper)
@@ -41,9 +47,7 @@
          ("M-i" . counsel-imenu)
          ("C-c s a" . counsel-ag)
          ("C-c s g" . counsel-git-grep)
-         ("C-c s r" . counsel-rg))
-  :config
-  (ivy-mode t))
+         ("C-c s r" . counsel-rg)))
 
 (use-package zoom
   :ensure t
