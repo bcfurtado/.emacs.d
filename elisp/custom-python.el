@@ -1,5 +1,12 @@
 (setq create-lockfiles nil)
 
+(use-package python
+  :init
+  (require 'python)
+  :bind (:map python-mode-map
+              ("C-<f9>" . mw/python--add-pudb-breakpoint)
+              ("C-M-<f9>" . mw/python--remove-breakpoints)))
+
 (use-package company
   :ensure t
   :config

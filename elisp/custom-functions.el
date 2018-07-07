@@ -30,4 +30,17 @@
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
+(defun mw/python--add-pudb-breakpoint ()
+  "Add pudb.set_trace() code and move line down"
+  (interactive)
+  (insert "import pudb; pudb.set_trace()"))
+
+(defun mw/python--remove-breakpoints ()
+  "Remove line with a pdb/pudb/ipdb breakpoint"
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (flush-lines "import i?pu?db; +i?pu?db.set_trace().*$")))
+
+
 (provide 'custom-functions)
