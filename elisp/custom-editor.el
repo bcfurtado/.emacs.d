@@ -78,6 +78,11 @@
   :config
   (global-undo-tree-mode))
 
+(use-package subword
+  :diminish subword-mode
+  :init
+  (global-subword-mode t))
+
 
 ;; No tabs
 (setq tab-width 4)
