@@ -30,6 +30,13 @@
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
+(defun replace-region-by (fn)
+  (let* ((beg (region-beginning))
+         (end (region-end))
+         (contents (buffer-substring beg end)))
+    (delete-region beg end)
+    (insert (funcall fn contents))))
+
 (defun mw/python--add-pudb-breakpoint ()
   "Add pudb.set_trace() code and move line down"
   (interactive)
