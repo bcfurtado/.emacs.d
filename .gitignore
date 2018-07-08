@@ -9,6 +9,7 @@ auto-save-list
 elpa/
 eshell/
 tramp
+places
 
 ## projectile
 projectile-bookmarks.eld
