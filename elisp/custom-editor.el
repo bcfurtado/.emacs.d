@@ -108,6 +108,25 @@
              (number-sequence ?1 ?9)
              '(?0))))
 
+(use-package ace-window
+  :ensure t
+  :diminish ace-window-mode
+  :bind
+  ("M-o" . ace-window)
+  :config
+  (set-face-attribute 'aw-leading-char-face nil
+                      :foreground "deep sky blue"
+                      :weight 'bold
+                      :height 2.0)
+  (set-face-attribute 'aw-mode-line-face nil
+                      :inherit 'mode-line-buffer-id
+                      :foreground "lawn green")
+  (setq aw-scope 'frame)
+  (setq aw-dispatch-always t)
+  (setq aw-keys '(?q ?w ?e ?r ?a ?s ?d ?f))
+  (setq aw-dispatch-alist '((?c aw-swap-window "Ace - Swap Window")
+                            (?n aw-flip-window)))
+  (ace-window-display-mode t))
 
 ;; No tabs
 (setq tab-width 4)
