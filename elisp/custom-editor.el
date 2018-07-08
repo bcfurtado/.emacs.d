@@ -101,6 +101,9 @@
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+;; Save the last cursor position.
+(save-place-mode 1)
+
 ;; No whitespaces
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
