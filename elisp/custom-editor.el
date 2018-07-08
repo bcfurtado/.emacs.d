@@ -95,6 +95,18 @@
         super-save-triggers (append super-save-triggers '("magit-status")))
   (super-save-mode +1))
 
+(use-package avy
+  :ensure t
+  :bind ("C-c SPC" . 'avy-goto-char-timer)
+  :config
+  (setq avy-all-windows nil)
+  (setq avy-background t)
+  (setq avy-keys
+      (nconc (number-sequence ?a ?z)
+             (number-sequence ?A ?Z)
+             (number-sequence ?1 ?9)
+             '(?0))))
+
 
 ;; No tabs
 (setq tab-width 4)
