@@ -3,6 +3,13 @@
   :bind (("C-x g" . magit-status)
          ("C-c v b" . magit-blame)))
 
+(use-package magithub
+  :ensure t
+  :after magit
+  :config
+  (magithub-feature-autoinject t)
+  (setq magithub-clone-default-directory "~/Projects"))
+
 (use-package git-timemachine
   :ensure t
   :bind ("C-c v t" . git-timemachine))
