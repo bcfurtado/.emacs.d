@@ -40,7 +40,8 @@
 ;; Stop cursor blinking
 (blink-cursor-mode -1)
 
-
+;; Hide startup screen
+(setq inhibit-startup-screen t)
 
 ;; This package allow us hide or abbreviate the mode line displays of
 ;; minor-modes.
