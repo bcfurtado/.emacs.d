@@ -59,7 +59,8 @@
   :bind (("C-a" . crux-move-beginning-of-line)
          ("C-c d" . crux-duplicate-current-line-or-region)
          ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
-         ("C-c R" . crux-rename-file-and-buffer)))
+         ("C-c R" . crux-rename-file-and-buffer)
+         ("C-c D" . crux-delete-file-and-buffer)))
 
 (use-package linum
   :config
