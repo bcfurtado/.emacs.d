@@ -27,6 +27,3 @@
 (require 'custom-web)
 (require 'custom-python)
 (require 'custom-javascript)
-
-
-(split-window-horizontally)
