@@ -48,5 +48,7 @@
 (use-package diminish
   :ensure t)
 
+;; Display full file path at the title bar when available
+(setq frame-title-format '(buffer-file-name "%f" ("%b")))
 
 (provide 'custom-ui)
