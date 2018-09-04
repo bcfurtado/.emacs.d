@@ -147,4 +147,7 @@
 ;; Don't break lines for me, please
 (setq-default truncate-lines t)
 
+;; Show column number
+(setq column-number-mode t)
+
 (provide 'custom-editor)
