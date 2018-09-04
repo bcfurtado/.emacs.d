@@ -144,4 +144,7 @@
 ;; Don't save temporary files everywhere
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
+;; Don't break lines for me, please
+(setq-default truncate-lines t)
+
 (provide 'custom-editor)
