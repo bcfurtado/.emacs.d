@@ -141,4 +141,7 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Don't save temporary files everywhere
+(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+
 (provide 'custom-editor)
