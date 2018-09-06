@@ -49,6 +49,12 @@
     (goto-char (point-min))
     (flush-lines "import i?pu?db; +i?pu?db.set_trace().*$")))
 
+(defun bc/insert-jira-task-id ()
+  (interactive)
+  (insert
+    (string-trim
+      (shell-command-to-string "git rev-parse --abbrev-ref HEAD | cut -c 1-8"))))
+
 (defun find-python-project-directory-root (dir)
   (let ((root-files-identifiers (concat "setup.py\\|"
                                         "requirements.txt\\|"
