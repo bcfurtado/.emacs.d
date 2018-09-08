@@ -27,3 +27,4 @@
 (require 'custom-web)
 (require 'custom-python)
 (require 'custom-javascript)
+(require 'custom-org-mode)
