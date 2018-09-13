@@ -15,6 +15,9 @@
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
+;; avoid customized settings on the init.el file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(if (file-exists-p custom-file) (load custom-file))(load custom-file)
 
 (require 'custom-setup)
 (require 'custom-functions)
