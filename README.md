@@ -13,3 +13,8 @@ $ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
 - emacs >= 25
 
 
+## lsp requirements
+```
+npm install -g javascript-typescript-langserver
+npm install -g vue-language-server
+```
