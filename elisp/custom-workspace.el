@@ -40,4 +40,7 @@
     (setq lsp-ui-sideline-ignore-duplicate t)
     (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
+(use-package restclient
+  :ensure t)
+
 (provide 'custom-workspace)
