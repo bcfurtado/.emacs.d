@@ -150,4 +150,7 @@
 ;; Show column number
 (setq column-number-mode t)
 
+;; Enable winner mode
+(winner-mode t)
+
 (provide 'custom-editor)
