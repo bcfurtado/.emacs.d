@@ -31,3 +31,6 @@
 (require 'custom-python)
 (require 'custom-javascript)
 (require 'custom-org-mode)
+
+;; after start up
+(open-my-todo-file)

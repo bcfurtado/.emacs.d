@@ -66,5 +66,9 @@
                                         "__main__.py")))
     (directory-files dir nil root-files-identifiers)))
 
+(defun open-my-todo-file()
+  (let ((my-todo-file "~/org-files/todo.org"))
+    (if (file-readable-p my-todo-file)
+      (find-file my-todo-file))))
 
 (provide 'custom-functions)
