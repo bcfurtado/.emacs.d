@@ -5,6 +5,7 @@
 
 (use-package magithub
   :ensure t
+  :disabled
   :after magit
   :config
   (magithub-feature-autoinject t)
