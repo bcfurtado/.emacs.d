@@ -3,7 +3,8 @@
   :ensure t
   :init
   (projectile-global-mode t)
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'ivy)
+  (setq projectile-switch-project-action 'projectile-dired))
 
 (use-package projectile-ripgrep
   :ensure t)
