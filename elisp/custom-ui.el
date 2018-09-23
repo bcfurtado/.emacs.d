@@ -18,13 +18,8 @@
   (doom-themes-org-config))
 
 (use-package doom-modeline
-  ;; This package requires that (all-the-icons-install-fonts) function
-  ;; be executed at least once.
   :ensure t
-  :defer t
-  :hook (after-init . doom-modeline-init)
-  :init
-  (doom-modeline-init))
+)
 
 ;; (use-package monokai-theme
 ;;   :ensure t

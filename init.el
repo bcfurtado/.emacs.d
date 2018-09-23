@@ -22,7 +22,6 @@
 (require 'custom-setup)
 (require 'custom-functions)
 (require 'custom-keybinds)
-(require 'custom-ui)
 (require 'custom-vc)
 (require 'custom-editor)
 (require 'custom-misc)
@@ -31,6 +30,7 @@
 (require 'custom-python)
 (require 'custom-javascript)
 (require 'custom-org-mode)
+(require 'custom-ui)
 
 ;; after start up
 (open-my-todo-file)
