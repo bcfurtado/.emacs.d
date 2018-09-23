@@ -7,20 +7,29 @@
 ;; (use-package flatland-black-theme
 ;;   :ensure t)
 
-;; (use-package doom-themes
-;;   :ensure t
-;;   :config
-;;   (setq doom-themes-enable-bold t
-;;         doom-themes-enable-italic t)
-;;   :init
-;;   (load-theme 'doom-one t)
-;;   (doom-themes-visual-bell-config)
-;;   (doom-themes-org-config))
-
-(use-package monokai-theme
+(use-package doom-themes
   :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
   :init
-  (load-theme 'monokai t))
+  (load-theme 'doom-one t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
+
+(use-package doom-modeline
+  ;; This package requires that (all-the-icons-install-fonts) function
+  ;; be executed at least once.
+  :ensure t
+  :defer t
+  :hook (after-init . doom-modeline-init)
+  :init
+  (doom-modeline-init))
+
+;; (use-package monokai-theme
+;;   :ensure t
+;;   :init
+;;   (load-theme 'monokai t))
 
 
 ;;; Define default font size for the frames
