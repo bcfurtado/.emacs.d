@@ -22,6 +22,7 @@
 (require 'custom-setup)
 (require 'custom-functions)
 (require 'custom-keybinds)
+(require 'custom-dired)
 (require 'custom-vc)
 (require 'custom-editor)
 (require 'custom-misc)
