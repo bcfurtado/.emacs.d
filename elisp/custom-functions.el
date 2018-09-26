@@ -68,7 +68,8 @@
 
 (defun open-my-todo-file()
   (let ((my-todo-file "~/org-files/todo.org"))
-    (if (file-readable-p my-todo-file)
-      (find-file my-todo-file))))
+    (when (file-readable-p my-todo-file)
+      (find-file my-todo-file)
+      (read-only-mode))))
 
 (provide 'custom-functions)
