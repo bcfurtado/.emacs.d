@@ -10,7 +10,12 @@ $ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
 
 ## requirements
 
-- emacs >= 25
+- emacs >= 26
+
+### installing
+```
+$ brew install emacs --with-cocoa --with-librsvg
+```
 
 ### optional requirements
 - ag
@@ -23,6 +28,7 @@ pip install 'python-language-server[all]'
 npm install -g javascript-typescript-langserver
 npm install -g vue-language-server
 ```
+
 
 ## useful links
 * [emacs flash card](https://gist.github.com/bcfurtado/898d74a4610213ac7c0c4dd9b06926ea)
