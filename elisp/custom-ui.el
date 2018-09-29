@@ -58,4 +58,10 @@
 ;; Display full file path at the title bar when available
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 
+;; Enable a better look and feel when on mac os by adding natural
+;; title bar
+(when *is-a-mac*
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark)))
+
 (provide 'custom-ui)
