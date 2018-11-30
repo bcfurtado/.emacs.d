@@ -8,9 +8,9 @@
 
 (use-package exec-path-from-shell
   :ensure t
-  :defer 5
   :if *is-a-mac*
   :config
+  (setq exec-path-from-shell-variables '("PATH"))
   (exec-path-from-shell-initialize))
 
 (when *is-a-linux*
