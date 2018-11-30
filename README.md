@@ -21,6 +21,7 @@ $ brew install emacs --with-cocoa --with-librsvg
 - ag
 - ispell
 - rg
+- multimarkdown
 
 ### lsp requirements
 ```
