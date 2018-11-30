@@ -153,4 +153,12 @@
 ;; Enable winner mode
 (winner-mode t)
 
+;; Enable disabled commands
+(put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+(advice-add 'downcase-region :around 'ensure-region-active)
+(advice-add 'upcase-region :around 'ensure-region-active)
+
 (provide 'custom-editor)

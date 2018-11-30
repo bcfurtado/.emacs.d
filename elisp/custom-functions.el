@@ -72,4 +72,8 @@
       (find-file my-todo-file)
       (read-only-mode))))
 
+(defun ensure-region-active (func &rest args)
+  (when (region-active-p)
+    (apply func args)))
+
 (provide 'custom-functions)
