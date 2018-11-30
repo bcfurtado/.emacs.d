@@ -20,3 +20,10 @@ custom.el
 ## restclient
 url/
 request/
+
+## others
+.emacs.desktop
+.mc-lists.el
+abbrev_defs
+bookmarks
+srecode-map.el
