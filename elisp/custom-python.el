@@ -8,8 +8,10 @@
   :init
   (require 'python)
   :bind (:map python-mode-map
-              ("C-<f9>" . mw/python--add-pudb-breakpoint)
-              ("C-M-<f9>" . mw/python--remove-breakpoints))
+          ("C-<f9>" . mw/python--add-pudb-breakpoint)
+          ("C-M-<f9>" . mw/python--remove-breakpoints)
+          ("C-M-f" . sp-forward-sexp)
+          ("C-M-b" . sp-backward-sexp))
   :config
   (lsp-define-stdio-client lsp-python "python"
                            (lsp-make-traverser 'find-python-project-directory-root)
