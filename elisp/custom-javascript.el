@@ -1,7 +1,7 @@
 (use-package js
   :bind (:map js-mode-map
-         ("M-." . 'lsp-ui-peek-find-definitions)
-         ("M-?" . 'lsp-ui-peek-find-references)))
+          ("M-." . 'lsp-ui-peek-find-definitions)
+          ("M-?" . 'lsp-ui-peek-find-references)))
 
 ;; The JavaScript LSP is required in order to use
 ;; lsp-javascript-typescript mode. In order to install, type:
