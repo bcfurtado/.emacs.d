@@ -37,7 +37,8 @@
   :ensure t
   :diminish ivy-mode
   :config
-  (ivy-mode t))
+  (ivy-mode t)
+  (setq ivy-use-selectable-prompt t))
 
 (use-package counsel
   :ensure t
@@ -129,17 +130,28 @@
                             (?n aw-flip-window)))
   (ace-window-display-mode t))
 
+(use-package hippie-exp
+  :bind (("C-." . hippie-expand)))
+
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
+
 ;; No tabs
-(setq tab-width 4)
-(setq default-tab-width 4)
-(setq-default indent-tabs-mode nil)
+;; (setq tab-width 4)
+;; (setq default-tab-width 4)
+;; (setq-default indent-tabs-mode t)
 
 ;; Save the last cursor position.
 (save-place-mode 1)
 
 ;; No whitespaces
-(add-hook 'before-save-hook 'whitespace-cleanup)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'whitespace-cleanup)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Don't save temporary files everywhere
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
