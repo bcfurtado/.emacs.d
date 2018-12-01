@@ -94,8 +94,9 @@
   :diminish super-save-mode
   :config
   (setq super-save-auto-save-when-idle t
-        super-save-idle-duration 5
-        super-save-triggers (append super-save-triggers '("magit-status")))
+    super-save-idle-duration 5)
+  (add-to-list 'super-save-triggers 'ace-window)
+  (add-to-list 'super-save-triggers 'magit-status)
   (super-save-mode +1))
 
 (use-package avy
