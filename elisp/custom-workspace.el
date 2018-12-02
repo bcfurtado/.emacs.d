@@ -4,7 +4,7 @@
   :init
   (projectile-global-mode t)
   (setq projectile-completion-system 'ivy)
-  (setq projectile-switch-project-action 'projectile-dired))
+  (setq projectile-switch-project-action 'projectile-find-dir))
 
 (use-package projectile-ripgrep
   :ensure t)
