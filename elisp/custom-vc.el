@@ -1,7 +1,9 @@
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)
-         ("C-c v b" . magit-blame)))
+          ("C-c v b" . magit-blame))
+  :config
+  (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
 
 (use-package magithub
   :ensure t
