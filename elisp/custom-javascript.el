@@ -41,4 +41,12 @@
 ;;   :config
 ;;   (add-hook 'vue-mode-hook #'lsp-vue-mmm-enable))
 
+(use-package indium
+  :ensure t
+  :bind (:map indium-repl-mode-map
+          ("C-x p" . indium-repl-previous-input)
+          ("C-x d" . indium-repl-next-input)))
+;; (unless (package-installed-p 'indium)
+;;   (package-install 'indium))
+
 (provide 'custom-javascript)
