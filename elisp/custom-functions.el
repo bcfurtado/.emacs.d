@@ -17,7 +17,7 @@
   (interactive)
   (let* ((module (bc/get-module-name))
          (func (which-function))
-         (command (concat "python manage.py test " module "." func " --no-input")))
+         (command (concat "DJANGO_SETTINGS_MODULE=\"kog.config.settings.testing\" python manage.py test " module "." func " --no-input --keepdb")))
     (projectile-test-project command)))
 
 (defun copy-file-name-to-clipboard ()

@@ -29,17 +29,17 @@
   :config
   (push 'company-lsp company-backends))
 
-(use-package lsp-mode
-  :ensure t
-  :config
-  (require 'lsp-imenu)
-  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
+;; (use-package lsp-mode
+;;   :ensure t
+;;   :config
+;;   (require 'lsp-imenu)
+;;   (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
 
-(use-package lsp-ui
-    :ensure t
-    :config
-    (setq lsp-ui-sideline-ignore-duplicate t)
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+;; (use-package lsp-ui
+;;     :ensure t
+;;     :config
+;;     (setq lsp-ui-sideline-ignore-duplicate t)
+;;     (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 (use-package restclient
   :ensure t)
