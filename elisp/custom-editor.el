@@ -174,4 +174,7 @@
 (advice-add 'downcase-region :around 'ensure-region-active)
 (advice-add 'upcase-region :around 'ensure-region-active)
 
+;; Prefer vertical splits over horizontal ones
+(setq split-width-threshold 1)
+
 (provide 'custom-editor)
