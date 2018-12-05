@@ -47,8 +47,15 @@
          ("M-x" . counsel-M-x)
          ("M-i" . counsel-imenu)
          ("C-c s a" . counsel-ag)
-         ("C-c s g" . counsel-git-grep)
-         ("C-c s r" . counsel-rg)))
+         ("C-c s g" . counsel-gtit-grep)
+         ("C-c s r" . counsel-rg))
+  :config
+  (ivy-set-actions
+    t
+    '(("j" counsel-projectile-find-file-action-other-window "other window"))))
+
+;; (ivy-set-actions t nil)
+
 
 (use-package zoom
   :ensure t

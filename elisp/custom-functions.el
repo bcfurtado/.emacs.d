@@ -76,4 +76,7 @@
   (when (region-active-p)
     (apply func args)))
 
+(defun counsel-projectile-find-file-action-other-window (file)
+  (find-file-other-window (projectile-expand-root file)))
+
 (provide 'custom-functions)
