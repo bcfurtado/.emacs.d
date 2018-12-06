@@ -28,7 +28,6 @@ $ brew install emacs --with-cocoa --with-librsvg
 pip install 'python-language-server[all]'
 npm install -g javascript-typescript-langserver
 npm install -g vscode-css-languageserver-bin
-npm install -g vue-language-server
 ```
 
 

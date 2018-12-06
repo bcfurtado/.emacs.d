@@ -14,12 +14,8 @@
 
 (use-package vue-mode
   :ensure t
+  :mode "\\.vue\\'"
   :config
   (setq mmm-submode-decoration-level 0))
-
-(use-package lsp-vue
-  :ensure t
-  :config
-  (add-hook 'vue-mode-hook #'lsp-vue-mmm-enable))
 
 (provide 'custom-javascript)
