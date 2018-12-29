@@ -36,7 +36,8 @@
   ;; The order is important here. We need enable the virtualenv first
   ;; and then enabled lsp-python
   (auto-virtualenv-set-virtualenv)
-  (lsp-python-enable)
+  (ignore-errors
+    (lsp-python-enable))
   (flycheck-mode))
 
 (add-hook 'python-mode-hook #'custom-python-mode-hook)
