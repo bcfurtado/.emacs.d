@@ -34,7 +34,7 @@
 
 (defun custom-python-mode-hook ()
   ;; The order is important here. We need enable the virtualenv first
-  ;; and then enabled lsp-python
+  ;; and then lsp-python
   (auto-virtualenv-set-virtualenv)
   (ignore-errors
     (lsp-python-enable))
