@@ -32,3 +32,7 @@ todo/
 ## lsp
 .cache/
 .lsp-session-v1
+
+### lsp-java
+eclipse.jdt.ls/
+workspace/
