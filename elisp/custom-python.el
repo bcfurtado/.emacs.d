@@ -1,9 +1,5 @@
 (setq create-lockfiles nil)
 
-(defun lsp-set-cfg ()
-  (let ((lsp-cfg `(:pyls (:configurationSources ("flake8")))))
-    (lsp--set-configuration lsp-cfg)))
-
 (use-package python
   :init
   (require 'python)
@@ -13,11 +9,7 @@
           ("C-M-f" . sp-forward-sexp)
           ("C-M-b" . sp-backward-sexp))
   :config
-  (lsp-define-stdio-client lsp-python "python"
-                           (lsp-make-traverser 'find-python-project-directory-root)
-                           '("pyls"))
-
-  (add-hook 'lsp-after-initialize-hook 'lsp-set-cfg))
+  (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
 
 (use-package pyvenv
   :ensure t)
@@ -31,15 +23,5 @@
   (setq dired-omit-files
     (concat dired-omit-files "$\\|^__pycache__$\\|^\\.pyc$\\|^\\.DS_Store$"))
   )
-
-(defun custom-python-mode-hook ()
-  ;; The order is important here. We need enable the virtualenv first
-  ;; and then lsp-python
-  (auto-virtualenv-set-virtualenv)
-  (ignore-errors
-    (lsp-python-enable))
-  (flycheck-mode))
-
-(add-hook 'python-mode-hook #'custom-python-mode-hook)
 
 (provide 'custom-python)

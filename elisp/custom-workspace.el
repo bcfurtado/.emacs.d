@@ -18,7 +18,9 @@
 
 (use-package flycheck
   :ensure t
-  :diminish flycheck-mode)
+  :diminish flycheck-mode
+  :config
+  (add-hook 'prog-mode-hook 'flycheck-mode))
 
 (use-package company
   :ensure t
@@ -31,16 +33,20 @@
   (push 'company-lsp company-backends))
 
 (use-package lsp-mode
+  :commands lsp
   :ensure t
   :config
-  (require 'lsp-imenu)
-  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
+  (require 'lsp-clients)
+  (add-hook 'prog-mode-hook 'lsp)
+  (setq lsp-prefer-flymake nil))
+
+
+(use-package company-lsp
+  :commands company-lsp)
 
 (use-package lsp-ui
-    :ensure t
-    :config
-    (setq lsp-ui-sideline-ignore-duplicate t)
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+  :ensure t
+  :commands lsp-ui-mode)
 
 (use-package restclient
   :ensure t)

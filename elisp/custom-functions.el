@@ -55,17 +55,6 @@
     (string-trim
       (shell-command-to-string "git rev-parse --abbrev-ref HEAD | cut -c 1-8"))))
 
-(defun find-python-project-directory-root (dir)
-  (let ((root-files-identifiers (concat "setup.py\\|"
-                                        "requirements.txt\\|"
-                                        "Pipfile\\|"
-                                        "setup.cfg\\|"
-                                        "tox.ini\\|"
-                                        ".git$\\|"
-                                        "__init__.py\\|"
-                                        "__main__.py")))
-    (directory-files dir nil root-files-identifiers)))
-
 (defun open-my-todo-file()
   (let ((my-todo-file "~/org-files/todo.org"))
     (when (file-readable-p my-todo-file)
