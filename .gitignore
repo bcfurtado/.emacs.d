@@ -28,3 +28,7 @@ abbrev_defs
 bookmarks
 srecode-map.el
 todo/
+
+## lsp
+.cache/
+.lsp-session-v1
