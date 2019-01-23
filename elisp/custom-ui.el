@@ -30,6 +30,10 @@
   :init
   (load-theme 'monokai t))
 
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;;; Define default font size for the frames
 (defun set-default-font-zize (frame)
