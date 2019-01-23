@@ -94,7 +94,8 @@
   :diminish super-save-mode
   :config
   (setq super-save-auto-save-when-idle t
-    super-save-idle-duration 5)
+    super-save-idle-duration 5
+    super-save-remote-files nil)
   (add-to-list 'super-save-triggers 'ace-window)
   (add-to-list 'super-save-triggers 'magit-status)
   (super-save-mode +1))
