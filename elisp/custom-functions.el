@@ -65,4 +65,9 @@
   (when (region-active-p)
     (apply func args)))
 
+(defun bc/javascript--add-debugger ()
+  "Add debugger statement and move line down"
+  (interactive)
+  (insert "debugger;"))
+
 (provide 'custom-functions)
