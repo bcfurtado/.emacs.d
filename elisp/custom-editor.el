@@ -144,17 +144,8 @@
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
 
-;; No tabs
-;; (setq tab-width 4)
-;; (setq default-tab-width 4)
-;; (setq-default indent-tabs-mode t)
-
 ;; Save the last cursor position.
 (save-place-mode 1)
-
-;; No whitespaces
-;; (add-hook 'before-save-hook 'whitespace-cleanup)
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Don't save temporary files everywhere
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
