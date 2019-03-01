@@ -10,4 +10,10 @@
   :config
   (setq mmm-submode-decoration-level 0))
 
+(defun my-mmm-mode-hook ()
+  (editorconfig-apply)
+  (linum-mode +1))
+
+(add-hook 'mmm-mode-hook 'my-mmm-mode-hook)
+
 (provide 'custom-javascript)
