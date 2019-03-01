@@ -1,6 +1,7 @@
 (use-package js
   :bind (:map js-mode-map
           ("C-<f9>" . bc/javascript--add-debugger)
+          ("C-M-<f9>" . bc/javascript--remove-all-debugger)
           ("M-." . 'lsp-ui-peek-find-definitions)
           ("M-?" . 'lsp-ui-peek-find-references)))
 

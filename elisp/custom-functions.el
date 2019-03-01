@@ -71,3 +71,10 @@
   (insert "debugger;"))
 
 (provide 'custom-functions)
+(defun bc/javascript--remove-all-debugger ()
+  "Add debugger statement and move line down"
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (flush-lines "debugger;$")))
+
