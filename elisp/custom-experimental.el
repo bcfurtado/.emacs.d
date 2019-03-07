@@ -27,4 +27,15 @@
 (use-package dap-java :after (lsp-java))
 (use-package lsp-java-treemacs :after (treemacs))
 
+;; RSS Reader
+(use-package elfeed
+  :ensure t
+  :bind ("<f5>" . 'elfeed)
+  :config
+  (setf url-queue-timeout 30)
+  (setq elfeed-feeds
+    '("http://nullprogram.com/feed/"
+       "http://planet.emacsen.org/atom.xml"
+       "http://bcfurtado.com/feed.xml")))
+
 (provide 'custom-experimental)
