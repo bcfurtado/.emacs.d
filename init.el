@@ -29,6 +29,7 @@
 (require 'custom-workspace)
 (require 'custom-web)
 (require 'custom-python)
+(require 'custom-elisp)
 (require 'custom-javascript)
 (require 'custom-org-mode)
 (require 'custom-experimental)
