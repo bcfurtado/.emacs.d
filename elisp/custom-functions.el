@@ -70,7 +70,14 @@
   (interactive)
   (insert "debugger;"))
 
-(provide 'custom-functions)
+(defun insert-current-week-date ()
+  (interactive)
+  (insert (shell-command-to-string "echo -n $(date +%Y) - Week $(date +%V)")))
+
+(defun insert-current-day-date ()
+  (interactive)
+  (insert (shell-command-to-string "echo -n $(date +%Y-%m-%d) - $(date +%A)")))
+
 (defun bc/javascript--remove-all-debugger ()
   "Add debugger statement and move line down"
   (interactive)
@@ -78,3 +85,4 @@
     (goto-char (point-min))
     (flush-lines "debugger;$")))
 
+(provide 'custom-functions)
