@@ -56,7 +56,7 @@
 (setq inhibit-startup-screen t)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+(global-hl-line-mode 0)
 
 ;; This package allow us hide or abbreviate the mode line displays of
 ;; minor-modes.
