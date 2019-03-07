@@ -38,4 +38,7 @@
        "http://planet.emacsen.org/atom.xml"
        "http://bcfurtado.com/feed.xml")))
 
+(use-package ccls
+  :ensure t)
+
 (provide 'custom-experimental)
