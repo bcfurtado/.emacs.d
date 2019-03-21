@@ -26,6 +26,7 @@ $ brew install emacs --with-cocoa --with-librsvg
 ### lsp requirements
 ```
 pip install 'python-language-server[all]'
+pip install isort
 npm install -g javascript-typescript-langserver
 npm install -g vscode-css-languageserver-bin
 ```

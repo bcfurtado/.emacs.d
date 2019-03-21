@@ -1,5 +1,8 @@
 (setq create-lockfiles nil)
 
+(use-package py-isort
+  :ensure t)
+
 (use-package python
   :init
   (require 'python)
@@ -7,7 +10,8 @@
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
           ("C-M-f" . sp-forward-sexp)
-          ("C-M-b" . sp-backward-sexp))
+          ("C-M-b" . sp-backward-sexp)
+          ("C-c C-t o" . py-isort-buffer))
   :config
   (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
 
