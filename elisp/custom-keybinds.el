@@ -13,3 +13,4 @@
 (global-set-key (kbd "C-c m C") (λ (replace-region-by 's-upper-camel-case)))
 
 (provide 'custom-keybinds)
+;;; custom-keybinds.el ends here
