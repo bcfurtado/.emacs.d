@@ -14,7 +14,7 @@ $ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
 
 ### installing
 ```
-$ brew install emacs --with-cocoa --with-librsvg
+$ brew cask install emacs
 ```
 
 ### optional requirements
