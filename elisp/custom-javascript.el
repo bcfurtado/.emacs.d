@@ -1,9 +1,36 @@
+(defun find-node-modules-folder ()
+  "Return the node_module path of the project."
+  (locate-dominating-file
+    (or (buffer-file-name) default-directory)
+    "node_modules"))
+
+(defun find-eslint-executable (path)
+  "Return the eslint executable path."
+  (expand-file-name "node_modules/.bin/eslint" path))
+
+(defun configure-eslint-flycheck-checker ()
+  "Use the locally installed eslint."
+  (flycheck-mode)
+  (let* ((folder (find-node-modules-folder))
+          (eslint (and folder (find-eslint-executable folder))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
+(defun my-js-mode-hook ()
+  "Javascript hook."
+  (configure-eslint-flycheck-checker))
+
+(use-package add-node-modules-path
+  :ensure t)
+
 (use-package js
   :bind (:map js-mode-map
           ("C-<f9>" . bc/javascript--add-debugger)
           ("C-M-<f9>" . bc/javascript--remove-all-debugger)
           ("M-." . 'lsp-ui-peek-find-definitions)
-          ("M-?" . 'lsp-ui-peek-find-references)))
+          ("M-?" . 'lsp-ui-peek-find-references))
+  :config
+  (add-hook 'js-mode-hook #'my-js-mode-hook))
 
 (use-package vue-mode
   :ensure t
