@@ -9,9 +9,6 @@
 
 ;;; Commentary:
 
-(print "something")
-
-
 (provide 'custom-elisp)
 
 ;;; custom-elisp.el ends here
