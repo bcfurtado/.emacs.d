@@ -38,7 +38,7 @@
   :config
   (require 'lsp-clients)
   (add-hook 'prog-mode-hook 'lsp)
-  (setq lsp-prefer-flymake nil))
+  (setq lsp-prefer-flymake :none))
 
 
 (use-package company-lsp
@@ -51,6 +51,7 @@
   (setq lsp-ui-sideline-enable nil))
 
 (use-package restclient
+  :disabled t
   :ensure t)
 
 (provide 'custom-workspace)
