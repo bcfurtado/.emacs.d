@@ -2,6 +2,7 @@
 (global-set-key (kbd "<f9>") 'bc/insert-jira-task-id)
 (global-set-key (kbd "<f8>") (λ (find-file-other-window (expand-file-name "init.el" user-emacs-directory))))
 (global-set-key (kbd "<f1>") 'toggle-truncate-lines)
+(global-set-key (kbd "<f2>") 'find-file-at-point)
 (global-set-key (kbd "C-c c") 'copy-file-name-to-clipboard)
 (global-set-key (kbd "C-c M-o") 'browse-url)
 
