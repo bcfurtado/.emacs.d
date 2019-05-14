@@ -33,6 +33,17 @@
   :config
   (add-hook 'js-mode-hook #'my-js-mode-hook))
 
+(use-package js2-mode
+  :ensure t)
+
+(use-package js2-refactor
+  :ensure t
+  :config
+  (add-hook 'js2-mode-hook #'js2-refactor-mode)
+  (setq js2-skip-preprocessor-directives t)
+  (js2r-add-keybindings-with-prefix "C-c C-m"))
+
+
 (use-package vue-mode
   :ensure t
   :mode "\\.vue\\'"
