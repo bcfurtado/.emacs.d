@@ -10,6 +10,7 @@
 
 (defun configure-eslint-flycheck-checker ()
   "Use the locally installed eslint."
+  (require 'flycheck)
   (flycheck-mode)
   (let* ((folder (find-node-modules-folder))
           (eslint (and folder (find-eslint-executable folder))))
