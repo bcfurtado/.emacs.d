@@ -5,8 +5,9 @@
      ,@body))
 
 (defun bc/current-file-name-in-the-project ()
-  (require 'which-func)
-  (substring (buffer-file-name) (match-end (string-match (projectile-project-root) buffer-file-name))))
+  (file-relative-name
+    (buffer-file-name)
+    (locate-dominating-file (buffer-file-name) ".git")))
 
 (defun bc/get-module-name ()
   (let* ((path-file (bc/current-file-name-in-the-project))
@@ -15,6 +16,7 @@
 
 (defun bc/test-django-function ()
   (interactive)
+  (require 'which-func)
   (let* ((module (bc/get-module-name))
          (func (which-function))
          (command (concat "python manage.py test " module "." func " --no-input")))
