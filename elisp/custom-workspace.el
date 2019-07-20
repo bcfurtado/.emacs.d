@@ -20,6 +20,7 @@
   :ensure t
   :diminish flycheck-mode
   :config
+  (require 'flycheck)
   (add-hook 'prog-mode-hook 'flycheck-mode))
 
 (use-package company
