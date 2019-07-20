@@ -10,10 +10,12 @@ elpa/
 eshell/
 tramp
 places
+games/
 
 ## projectile
 projectile-bookmarks.eld
 network-security.data
+projectile.cache
 
 custom.el
 
