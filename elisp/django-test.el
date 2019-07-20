@@ -1,3 +1,18 @@
+;;; django-test.el --- Quickly execute django tests  -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2019  Bruno Furtado
+
+;; Author: Bruno Furtado <bruno@bcfurtado.com>
+;; Keywords: convenience
+
+;;; Commentary:
+
+;; Package to help you to quickly execute django tests using
+;; compilation mode
+
+;;; Code:
+
+(require 'which-func)
 (defun bc/current-project-folder ()
   (locate-dominating-file (buffer-file-name) ".git"))
 
@@ -11,7 +26,7 @@
 
 (defun bc/test-django-function ()
   (interactive)
-  (require 'which-func)
+
   (let* ((module (bc/get-module-name))
          (func (which-function))
          (command (concat "python manage.py test " module "." func " --no-input")))
