@@ -17,15 +17,6 @@
 ;;   (doom-themes-visual-bell-config)
 ;;   (doom-themes-org-config))
 
-(use-package doom-modeline
-  :ensure t
-  :disabled t
-  :defer t
-  :hook (after-init . doom-modeline-init)
-  :config
-  (setq doom-modeline-github nil)
-  (setq doom-modeline-minor-modes nil))
-
 (use-package monokai-theme
   :ensure t
   :init
