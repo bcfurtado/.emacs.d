@@ -19,6 +19,7 @@
 
 (use-package doom-modeline
   :ensure t
+  :disabled t
   :defer t
   :hook (after-init . doom-modeline-init)
   :config
