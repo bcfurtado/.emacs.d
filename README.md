@@ -4,7 +4,7 @@
 
 ```sh
 $ mkdir ~/emacs
-$ git clone --recurse-submodules git@github.com:bcfurtado/.emacs.d.git ~/emacs/emacs-bcfurtado
+$ git clone git@github.com:bcfurtado/.emacs.d.git ~/emacs/emacs-bcfurtado
 $ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
 ```
 

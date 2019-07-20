@@ -1,5 +1,4 @@
 (use-package projectile
-  :load-path "vendor/projectile"
   :ensure t
   :config
   (projectile-mode +1)
