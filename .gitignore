@@ -30,6 +30,7 @@ abbrev_defs
 bookmarks
 srecode-map.el
 todo/
+transient/
 
 ## lsp
 .cache/
