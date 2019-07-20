@@ -170,8 +170,7 @@
 ;; Prefer vertical splits over horizontal ones
 (setq split-width-threshold 1)
 
-;; Automatically update  buffers when the file change on disk
-(global-auto-revert-mode 1)
-(add-hook 'dired-mode-hook 'auto-revert-mode)
+;; Do not automatically update buffers when the file change on disk
+(global-auto-revert-mode 0)
 
 (provide 'custom-editor)
