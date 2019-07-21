@@ -14,12 +14,13 @@
 
 (require 'which-func)
 
+(defconst django-test-manage-py "manage.py")
 
 (defun django-test-project-folder ()
   "Return Django root project path.
 Currently, we are assuming that the root folder is the one that
-contains the git folder."
-  (locate-dominating-file (buffer-file-name) ".git"))
+contains the manage.py."
+  (locate-dominating-file (buffer-file-name) django-test-manage-py))
 
 (defun django-test-file-path ()
   "Return the path of the file to be tested relative to the project root directory."
