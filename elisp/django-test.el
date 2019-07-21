@@ -12,9 +12,15 @@
 
 ;;; Code:
 
-(require 'which-func)
+(require 'python)
 
 (defconst django-test-manage-py "manage.py")
+(defconst django-test-command "test")
+(defconst django-test-command-params-no-input "--no-input")
+
+(defun is-nil (element)
+  "Check if ELEMENT is nil."
+  (eq element nil))
 
 (defun django-test-project-folder ()
   "Return Django root project path.
@@ -32,6 +38,26 @@ contains the manage.py."
          (module-name (substring path-file 0 (string-match ".py" path-file))))
     (replace-regexp-in-string "/" "." module-name)))
 
+(defun django-test-generate-python-module-at-point ()
+  "Generate python module at the point."
+  (let ((full-module (seq-map 'cdr
+                      (list
+                        (cons 'module (django-test-python-module-from-file-path))
+                        (cons 'function (python-info-current-defun))))))
+    (string-join (seq-remove 'is-nil full-module) ".")))
+
+(defun django-test-generate-test-command ()
+  "Generate the test command."
+  (let ((command (seq-map 'cdr
+                   (list
+                     (cons 'python-interpreter python-shell-interpreter)
+                     (cons 'manage-py django-test-manage-py)
+                     (cons 'command django-test-command)
+                     (cons 'module (django-test-generate-python-module-at-point))
+                     (cons 'noinput django-test-command-params-no-input)))))
+    (string-join command " ")))
+
+
 (defun django-test-run-test-at-point ()
   "Run django test at the point.
 Invoke this function and you'll be promoted with the exact command to
@@ -39,9 +65,7 @@ run only the tests for the specific file.
 Keep your cursor under the class name or the function and the command
 will be even more specific."
   (interactive)
-  (let* ((module (django-test-python-module-from-file-path))
-         (func (which-function))
-         (command (concat "python manage.py test " module "." func " --no-input")))
+  (let* ((command (django-test-generate-test-command)))
     (save-excursion
       (setq compilation-read-command t)
       (setq project-root-folder (find-file-noselect (django-test-project-folder)))
