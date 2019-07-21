@@ -12,7 +12,9 @@
 
 ;;; Code:
 
+(require 'compile)
 (require 'python)
+(require 'subr-x)
 
 (defconst django-test-manage-py "manage.py")
 (defconst django-test-command "test")
@@ -67,12 +69,12 @@ will be even more specific."
   (interactive)
   (let* ((command (django-test-generate-test-command)))
     (save-excursion
-      (setq compilation-read-command t)
-      (setq project-root-folder (find-file-noselect (django-test-project-folder)))
-      (set-buffer project-root-folder)
-      (setq compile-command command)
-      (call-interactively 'compile)
-      (kill-buffer project-root-folder))))
+      (let* ((project-root-folder (find-file-noselect (django-test-project-folder))))
+        (setq compilation-read-command t)
+        (set-buffer project-root-folder)
+        (setq compile-command command)
+        (call-interactively 'compile)
+        (kill-buffer project-root-folder)))))
 
 (provide 'django-test)
 ;;; django-test ends here
