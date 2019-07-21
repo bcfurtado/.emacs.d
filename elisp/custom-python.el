@@ -9,7 +9,7 @@
   :bind (:map python-mode-map
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
-          ("<f7>" . bc/test-django-function)
+          ("<f7>" . django-test-run-test-at-point)
           ("C-M-f" . sp-forward-sexp)
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t o" . py-isort-buffer))
