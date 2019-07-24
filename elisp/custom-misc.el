@@ -8,4 +8,8 @@
   (defengine stakoverflow "https://stackoverflow.com/search?q=%s")
   (defengine translate "https://translate.google.com.br/#en/pt/%s"))
 
+
+(use-package package-lint
+  :ensure t)
+
 (provide 'custom-misc)
