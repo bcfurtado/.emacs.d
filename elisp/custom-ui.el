@@ -19,7 +19,7 @@
 
 (use-package monokai-theme
   :ensure t
-  :disable t
+  :disabled t
   :init
   (load-theme 'monokai t))
 
