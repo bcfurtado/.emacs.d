@@ -80,6 +80,13 @@ pull-request url so it can be open on the browser"
         (browse-url (string-trim (buffer-substring-no-properties start-pos (goto-char (match-end 0)))))
         ))))
 
+(defun bc/follow-compilation (&rest args)
+  (when (get-buffer "*compilation*")
+    (switch-to-buffer-other-window "*compilation*")))
+
+(advice-add
+ 'compile
+ :after 'bc/follow-compilation)
 
 (provide 'custom-functions)
 ;;; custom-functions.el ends here
