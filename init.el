@@ -1,19 +1,12 @@
-;; My emacs configuration
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+;;; init.el --- My emacs configuration
 
-(package-initialize)
+;;; Commentary:
 
-;; ensure that use-package is installed
-(setq package-enable-at-startup nil)
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(require 'use-package)
+;;; Code:
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
+
+(require 'custom-pm-setup)
 
 ;; avoid customized settings on the init.el file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -42,3 +35,5 @@
 
 (setq max-specpdl-size 5)  ; default is 1000, reduce the backtrace level
 (setq debug-on-error t)  ; now you should get a backtrace
+
+(setq compilation-scroll-output t)
