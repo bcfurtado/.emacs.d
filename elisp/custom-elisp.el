@@ -7,6 +7,9 @@
   :bind (:map emacs-lisp-mode-map
           ("C-j" . eval-print-last-sexp)))
 
+(use-package suggest
+  :ensure t)
+
 ;;; Commentary:
 
 (provide 'custom-elisp)
