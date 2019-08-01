@@ -3,13 +3,15 @@
 (use-package py-isort
   :ensure t)
 
+(require 'django-test)
+
 (use-package python
   :init
   (require 'python)
   :bind (:map python-mode-map
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
-          ("<f7>" . django-test-run-test-at-point)
+          ("<f10>" . django-test-runner)
           ("C-M-f" . sp-forward-sexp)
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t o" . py-isort-buffer))

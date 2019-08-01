@@ -28,8 +28,6 @@
 (require 'custom-experimental)
 (require 'custom-ui)
 
-(require 'django-test)
-
 ;; after start up
 (open-my-todo-file)
 

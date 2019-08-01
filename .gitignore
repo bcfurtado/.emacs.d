@@ -39,3 +39,8 @@ transient/
 ### lsp-java
 eclipse.jdt.ls/
 workspace/
+
+
+straight/
+
+.cask/
