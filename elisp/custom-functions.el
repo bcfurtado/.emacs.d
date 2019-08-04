@@ -88,5 +88,9 @@ pull-request url so it can be open on the browser"
  'compile
  :after 'bc/follow-compilation)
 
+(defun open-init-el ()
+  (interactive)
+  (find-file-other-window (expand-file-name "init.el" user-emacs-directory)))
+
 (provide 'custom-functions)
 ;;; custom-functions.el ends here
