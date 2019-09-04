@@ -3,11 +3,12 @@
 (use-package py-isort
   :ensure t)
 
-(require 'django-test)
+(require 'django-test-runner)
 
 (use-package python
   :init
   (require 'python)
+  :after (django-test-runner)
   :bind (:map python-mode-map
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
