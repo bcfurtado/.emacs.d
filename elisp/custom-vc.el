@@ -1,7 +1,8 @@
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)
-          ("C-c v b" . magit-blame)
+          ("C-c v b" . magit-blame-addition)
+          ("C-c v l" . magit-log-buffer-file)
           ("C-c v o" . bc/create-or-open-existing-bitbucket-pull-request))
   :config
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
