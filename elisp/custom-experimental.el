@@ -8,6 +8,13 @@
   :config
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
+(use-package sqlformat
+  :ensure t)
+
+(use-package sql
+  :after (sqlformat)
+  :bind (:map sql-mode-map
+          ("C-c C-f" . sqlformat)))
 
 ;; Java support
 (use-package treemacs :ensure t)
