@@ -6,7 +6,8 @@
 (use-package bind-key
   :ensure t
   :config
-  (bind-key "M-j" (λ (join-line -1))))
+  (bind-key "M-j" (λ (join-line -1)))
+  (bind-key "M-J" (λ (join-line -1) (just-one-space 0))))
 
 (use-package expand-region
   :ensure t
