@@ -16,23 +16,39 @@
   :bind (:map sql-mode-map
           ("C-c C-f" . sqlformat)))
 
+
 ;; Java support
-(use-package treemacs :ensure t)
-(use-package yasnippet :ensure t)
-(use-package hydra :ensure t)
+(use-package treemacs
+  :ensure t
+  :disabled t)
+
+(use-package yasnippet
+  :ensure t
+  :disabled t)
+
+(use-package hydra
+  :ensure t)
+
 (use-package lsp-java
   :ensure t
   :after lsp
   :config (add-hook 'java-mode-hook 'lsp))
 
 (use-package dap-mode
-  :ensure t :after lsp-mode
+  :ensure t
+  :disabled t
+  :after lsp-mode
   :config
   (dap-mode t)
   (dap-ui-mode t))
 
-(use-package dap-java :after (lsp-java))
-(use-package lsp-java-treemacs :after (treemacs))
+(use-package dap-java
+  :disabled t
+  :after (lsp-java))
+
+(use-package lsp-java-treemacs
+  :disabled t
+  :after (treemacs))
 
 ;; RSS Reader
 (use-package elfeed
