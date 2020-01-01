@@ -50,6 +50,9 @@
   :config
   (setq mmm-submode-decoration-level 0))
 
+(use-package web-mode
+  :ensure t)
+
 (defun my-mmm-mode-hook ()
   (editorconfig-apply)
   (linum-mode +1))
