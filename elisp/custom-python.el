@@ -25,11 +25,4 @@
 (use-package auto-virtualenv
   :ensure t)
 
-(use-package dired-x
-  :config
-  (setq-default dired-omit-files-p t)
-  (setq dired-omit-files
-    (concat dired-omit-files "$\\|^__pycache__$\\|^\\.pyc$\\|^\\.DS_Store$"))
-  )
-
 (provide 'custom-python)
