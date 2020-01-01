@@ -28,6 +28,7 @@
   (company-mode))
 
 (use-package company-lsp
+  :disable t
   :ensure t
   :config
   (push 'company-lsp company-backends))
@@ -42,9 +43,11 @@
 
 
 (use-package company-lsp
+  :disable t
   :commands company-lsp)
 
 (use-package lsp-ui
+  :disable t
   :ensure t
   :commands lsp-ui-mode
   :config
