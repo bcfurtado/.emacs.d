@@ -58,4 +58,7 @@
   (global-set-key (kbd "C-h F") #'helpful-function)
   (global-set-key (kbd "C-h C") #'helpful-command))
 
+(use-package deadgrep
+  :ensure t)
+
 (provide 'custom-experimental)
