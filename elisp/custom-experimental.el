@@ -64,14 +64,6 @@
 (use-package ccls
   :ensure t)
 
-(use-package helpful
-  :ensure t
-  :config
-  (global-set-key (kbd "C-h k") #'helpful-key)
-  (global-set-key (kbd "C-c C-d") #'helpful-at-point)
-  (global-set-key (kbd "C-h F") #'helpful-function)
-  (global-set-key (kbd "C-h C") #'helpful-command))
-
 (use-package deadgrep
   :ensure t)
 

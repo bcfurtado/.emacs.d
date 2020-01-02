@@ -34,6 +34,13 @@
   :init
   (add-hook 'prog-mode-hook (λ (highlight-symbol-mode t))))
 
+(use-package helpful
+  :ensure t
+  :bind (("C-h k" . helpful-key)
+          ("C-c C-d" . helpful-at-point)
+          ("C-h F" . helpful-function)
+          ("C-h C" . helpful-command)))
+
 (use-package ivy
   :ensure t
   :diminish ivy-mode
