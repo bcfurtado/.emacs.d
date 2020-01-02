@@ -41,6 +41,16 @@
   (ivy-mode t)
   (setq ivy-use-selectable-prompt t))
 
+(use-package ivy-rich
+  :ensure t
+  :config
+  (ivy-rich-mode 1)
+  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
+  (setq counsel-describe-function-function 'helpful-callable)
+  (setq counsel-describe-variable-function 'helpful-variable)
+  :bind (("C-h f" . counsel-describe-function)
+          ("C-h v" . counsel-describe-variable)))
+
 (use-package counsel
   :ensure t
   :bind (("C-s" . swiper)
