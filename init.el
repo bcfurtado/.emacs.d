@@ -33,6 +33,7 @@
 
 (setq max-specpdl-size 5)  ; default is 1000, reduce the backtrace level
 (setq debug-on-error t)  ; now you should get a backtrace
-(setq gc-cons-threshold (* gc-cons-threshold 100))
+(setq gc-cons-threshold (* gc-cons-threshold 100))  ; 80 mb
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
 
 (setq compilation-scroll-output t)
