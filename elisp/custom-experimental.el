@@ -73,4 +73,7 @@
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
   (setq highlight-indent-guides-method 'character))
 
+(use-package docker
+  :ensure t)
+
 (provide 'custom-experimental)
