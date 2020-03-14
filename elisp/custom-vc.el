@@ -16,9 +16,15 @@
   (magithub-feature-autoinject t)
   (setq magithub-clone-default-directory "~/Projects"))
 
+(defun disconnect-lsp-after-git-timemachine (&rest args)
+  (lsp-disconnect))
+
 (use-package git-timemachine
   :ensure t
-  :bind ("C-c v t" . git-timemachine))
+  :bind ("C-c v t" . 'git-timemachine)
+  :init
+  (add-hook 'git-timemachine-mode-hook 'diff-hl-magit-post-refresh)
+  (advice-add 'git-timemachine--show-minibuffer-details :before 'disconnect-lsp-after-git-timemachine))
 
 (use-package diff-hl
   :ensure t
