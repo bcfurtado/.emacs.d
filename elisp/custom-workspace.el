@@ -20,7 +20,8 @@
   :diminish flycheck-mode
   :config
   (require 'flycheck)
-  (add-hook 'prog-mode-hook 'flycheck-mode))
+  (add-hook 'prog-mode-hook 'flycheck-mode)
+  (setq flycheck-navigation-minimum-level 'error))
 
 (use-package company
   :ensure t
