@@ -92,5 +92,13 @@ pull-request url so it can be open on the browser"
   (interactive)
   (find-file-other-window (expand-file-name "init.el" user-emacs-directory)))
 
+;; from emacs 26.3
+(eval-after-load "rect"
+  '(defun rectangle--default-line-number-format (start end start-at)
+     (concat "%"
+       (int-to-string (length (int-to-string (+ (count-lines start end)
+                                               start-at))))
+       "d")))
+
 (provide 'custom-functions)
 ;;; custom-functions.el ends here
