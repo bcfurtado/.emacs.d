@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 (use-package projectile
   :ensure t
   :config
@@ -15,13 +17,39 @@
   :config
   (editorconfig-mode t))
 
+(defun bc/go-to-next-error (&rest args)
+  (interactive "P")
+  (setq flycheck-navigation-minimum-level 'error)
+  (apply 'flycheck-next-error args))
+
+(defun bc/go-to-next-warning (&rest args)
+  (interactive "P")
+  (setq flycheck-navigation-minimum-level nil)
+  (apply 'flycheck-next-error args))
+
+(defun bc/go-to-previous-error (&rest args)
+  (interactive "P")
+  (setq flycheck-navigation-minimum-level 'error)
+  (apply 'flycheck-previous-error args))
+
+(defun bc/go-to-previous-warning (&rest args)
+  (interactive "P")
+  (setq flycheck-navigation-minimum-level nil)
+  (apply 'flycheck-previous-error args))
+
+
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode
+  :bind (:map flycheck-command-map
+          ("n" . bc/go-to-next-error)
+          ("p" . bc/go-to-previous-error)
+          ("N" . bc/go-to-next-warning)
+          ("P" . bc/go-to-previous-warning))
+
   :config
   (require 'flycheck)
-  (add-hook 'prog-mode-hook 'flycheck-mode)
-  (setq flycheck-navigation-minimum-level 'error))
+  (add-hook 'prog-mode-hook 'flycheck-mode))
 
 (use-package company
   :ensure t
