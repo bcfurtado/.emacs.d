@@ -20,7 +20,8 @@
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t f" . yapfify-region)
           ("C-c C-t F" . yapfify-buffer)
-          ("C-c C-t o" . py-isort-buffer))
+          ("C-c C-t o" . py-isort-buffer)
+          ("C-M-t" . scottfrazer/transpose-sexps))
   :config
   (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
 

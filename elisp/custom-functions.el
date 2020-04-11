@@ -100,5 +100,31 @@ pull-request url so it can be open on the browser"
                                                start-at))))
        "d")))
 
+
+;; https://emacs.stackexchange.com/questions/11061/how-to-transpose-two-arguments-of-a-function-in-python
+(defun scottfrazer/transpose-sexps ()
+  "If point is after certain chars transpose chunks around that.
+Otherwise transpose sexps."
+  (interactive "*")
+  (if (not (looking-back "[,]\\s-*" (point-at-bol)))
+      (progn (transpose-sexps 1) (forward-sexp -1))
+    (let ((beg (point)) end rhs lhs)
+      (while (and (not (eobp))
+                  (not (looking-at "\\s-*\\([,]\\|\\s)\\)")))
+        (forward-sexp 1))
+      (setq rhs (buffer-substring beg (point)))
+      (delete-region beg (point))
+      (re-search-backward "[,]\\s-*" nil t)
+      (setq beg (point))
+      (while (and (not (bobp))
+                  (not (looking-back "\\([,]\\|\\s(\\)\\s-*" (point-at-bol))))
+        (forward-sexp -1))
+      (setq lhs (buffer-substring beg (point)))
+      (delete-region beg (point))
+      (insert rhs)
+      (re-search-forward "[,]\\s-*" nil t)
+      (save-excursion
+        (insert lhs)))))
+
 (provide 'custom-functions)
 ;;; custom-functions.el ends here
