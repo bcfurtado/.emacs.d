@@ -8,6 +8,9 @@
 (use-package yapfify
   :ensure t)
 
+(use-package pyimport
+  :ensure t)
+
 (use-package python
   :init
   (require 'python)
@@ -20,7 +23,9 @@
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t f" . yapfify-region)
           ("C-c C-t F" . yapfify-buffer)
-          ("C-c C-t o" . py-isort-buffer)
+          ("C-c C-t s" . py-isort-buffer)
+          ("C-C C-t i" . pyimport-insert-missing)
+          ("C-C C-t r" . pyimport-remove-unused)
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
   (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
