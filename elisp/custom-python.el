@@ -11,6 +11,11 @@
 (use-package pyimport
   :ensure t)
 
+(defun bc/py-organize-imports()
+  (interactive)
+  (pyimport-remove-unused)
+  (py-isort-buffer))
+
 (use-package python
   :init
   (require 'python)
@@ -23,9 +28,8 @@
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t f" . yapfify-region)
           ("C-c C-t F" . yapfify-buffer)
-          ("C-c C-t s" . py-isort-buffer)
+          ("C-c C-t s" . bc/py-organize-imports)
           ("C-C C-t i" . pyimport-insert-missing)
-          ("C-C C-t r" . pyimport-remove-unused)
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
   (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
