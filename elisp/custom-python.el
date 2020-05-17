@@ -30,6 +30,7 @@
           ("C-c C-t F" . yapfify-buffer)
           ("C-c C-t s" . bc/py-organize-imports)
           ("C-C C-t i" . pyimport-insert-missing)
+          ("C-C C-t j" . bc/python--jump-to-test)
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
   (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))

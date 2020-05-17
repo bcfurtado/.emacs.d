@@ -33,6 +33,13 @@
     (goto-char (point-min))
     (flush-lines "import i?pu?db; +i?pu?db.set_trace().*$")))
 
+(defun bc/python--jump-to-test ()
+  "Open python test case"
+  (interactive)
+  (let ((test-file (concat default-directory "tests/" "test_" (buffer-name))))
+    (when (file-readable-p test-file)
+      (find-file test-file))))
+
 (defun bc/insert-jira-task-id ()
   (interactive)
   (insert
