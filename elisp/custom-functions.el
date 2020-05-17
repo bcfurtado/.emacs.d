@@ -37,7 +37,7 @@
   (interactive)
   (insert
     (string-trim
-      (shell-command-to-string "git rev-parse --abbrev-ref HEAD | cut -c 1-8"))))
+      (shell-command-to-string "git rev-parse --abbrev-ref HEAD | cut -c 1-9"))))
 
 (defun open-my-todo-file()
   (let ((my-todo-file "~/org-files/todo.org"))
