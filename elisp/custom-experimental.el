@@ -79,4 +79,7 @@
 (use-package poetry
   :ensure t)
 
+(use-package go-mode
+  :ensure t)
+
 (provide 'custom-experimental)
