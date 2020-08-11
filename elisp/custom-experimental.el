@@ -76,4 +76,7 @@
 (use-package docker
   :ensure t)
 
+(use-package poetry
+  :ensure t)
+
 (provide 'custom-experimental)
