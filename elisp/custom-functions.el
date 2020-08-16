@@ -76,13 +76,13 @@
     (goto-char (point-min))
     (flush-lines "debugger;$")))
 
-(defun bc/create-or-open-existing-bitbucket-pull-request()
+(defun bc/create-github-pull-request()
   "This function parse magit-process buffer and retrives the \
 pull-request url so it can be open on the browser"
   (interactive)
   (with-current-buffer (magit-process-buffer t)
     (goto-char (point-max)) ;; Same as (end-of-buffer)
-    (let ((start-pos (search-backward-regexp "https://bitbucket.org/.*/pull-requests/.*$" nil t 1)))
+    (let ((start-pos (search-backward-regexp "https://github.com/.*/pull/new/.*$" nil t 1)))
       (when start-pos
         (browse-url (string-trim (buffer-substring-no-properties start-pos (goto-char (match-end 0)))))
         ))))

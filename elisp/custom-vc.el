@@ -3,7 +3,7 @@
   :bind (("C-x g" . magit-status)
           ("C-c v b" . magit-blame-addition)
           ("C-c v l" . magit-log-buffer-file)
-          ("C-c v o" . bc/create-or-open-existing-bitbucket-pull-request)
+          ("C-c v o" . bc/create-github-pull-request)
           ("C-c v c" . magit-file-checkout))
   :config
   (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1))
