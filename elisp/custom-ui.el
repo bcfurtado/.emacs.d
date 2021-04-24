@@ -65,4 +65,18 @@
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark)))
 
+(use-package default-text-scale
+  :ensure t
+  :bind (("C-x C-=" . 'default-text-scale-increase)
+          ("C-x C-+" . 'default-text-scale-increase)
+          ("C-x C--" . 'default-text-scale-decrease)
+          ("C-x C-0" . 'default-text-scale-reset))
+  :config
+  (define-key default-text-scale-mode-map (kbd "C-M-=") nil)
+  (define-key default-text-scale-mode-map (kbd "C-M--") nil)
+  (define-key default-text-scale-mode-map (kbd "C-M-0") nil)
+  :init
+  (add-hook 'after-init-hook 'default-text-scale-mode))
+
+
 (provide 'custom-ui)
