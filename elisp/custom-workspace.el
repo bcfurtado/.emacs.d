@@ -86,4 +86,10 @@
   :disabled t
   :ensure t)
 
+(use-package dumb-jump
+  :ensure t
+  :config
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+  :init (dumb-jump-mode))
+
 (provide 'custom-workspace)
