@@ -3,6 +3,12 @@
 (use-package py-isort
   :ensure t)
 
+(quelpa
+  '(django-test-runner
+     :fetcher git
+     :url "https://github.com/bcfurtado/django-test-runner.el.git"))
+
+
 (require 'django-test-runner)
 
 (use-package yapfify
