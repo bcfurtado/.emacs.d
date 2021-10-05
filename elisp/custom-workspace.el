@@ -8,8 +8,11 @@
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action 'projectile-find-dir))
 
-(use-package projectile-ripgrep
-  :ensure t)
+(use-package rg
+  :ensure t
+  :config
+  (rg-enable-default-bindings (kbd "C-c s o"))
+  (define-key projectile-mode-map (kbd "C-c p s r") 'rg-project))
 
 (use-package editorconfig
   :ensure t
