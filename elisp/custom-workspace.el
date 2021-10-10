@@ -59,31 +59,40 @@
   :config
   (company-mode))
 
-(use-package company-lsp
-  :disabled t
-  :ensure t
-  :config
-  (push 'company-lsp company-backends))
-
 (use-package lsp-mode
-  :commands lsp
+  ;; :commands lsp
   :ensure t
+  :hook
+  (lsp-mode . lsp-enable-which-key-integration)
+  (java-mode . #'lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-enable-file-watchers nil)
+  (setq read-process-output-max (* 1024 1024 3))  ; 3 mb
+  (setq lsp-completion-provider :capf)
+  (setq lsp-idle-delay 0.500)
   :config
-  (require 'lsp-clients)
-  (add-hook 'prog-mode-hook 'lsp)
-  (setq lsp-prefer-flymake :none))
+  (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-ui-doc-enable nil)
+  (setq lsp-ui-sideline-enable nil)
+  (setq lsp-ui-sideline-show-code-actions nil)
+  (setq lsp-ui-sideline-enable nil)
 
+  (with-eval-after-load 'lsp-intelephense
+    (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))
 
-(use-package company-lsp
-  :disabled t
-  :commands company-lsp)
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 
 (use-package lsp-ui
-  :disabled t
   :ensure t
-  :commands lsp-ui-mode
-  :config
-  (setq lsp-ui-sideline-enable nil))
+  :after (lsp-mode)
+  :bind (:map lsp-ui-mode-map
+          ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+          ([remap xref-find-references] . lsp-ui-peek-find-references))
+  :init (setq lsp-ui-doc-delay 1.5
+          lsp-ui-doc-position 'bottom
+	        lsp-ui-doc-max-width 100
+          ))
 
 (use-package restclient
   :disabled t

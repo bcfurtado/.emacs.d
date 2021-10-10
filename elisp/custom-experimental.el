@@ -18,21 +18,31 @@
 
 
 ;; Java support
+(setenv "JAVA_HOME" "/Users/bruno/.sdkman/candidates/java/current")
+
+(use-package lsp-treemacs
+  :after (lsp-mode treemacs)
+  :ensure t
+  :commands lsp-treemacs-errors-list
+  :bind (:map lsp-mode-map
+         ("M-9" . lsp-treemacs-errors-list)))
+
 (use-package treemacs
   :ensure t
-  :disabled t)
+  :commands (treemacs)
+  :after (lsp-mode))
 
-(use-package yasnippet
-  :ensure t
-  :disabled t)
+(use-package yasnippet :config (yas-global-mode))
+(use-package yasnippet-snippets :ensure t)
 
 (use-package hydra
   :ensure t)
 
 (use-package lsp-java
   :ensure t
-  :after lsp
-  :config (add-hook 'java-mode-hook 'lsp))
+  ;; :after lsp
+  :config
+  (add-hook 'java-mode-hook 'lsp))
 
 (use-package dap-mode
   :ensure t
@@ -45,10 +55,6 @@
 (use-package dap-java
   :disabled t
   :after (lsp-java))
-
-(use-package lsp-java-treemacs
-  :disabled t
-  :after (treemacs))
 
 ;; RSS Reader
 (use-package elfeed
@@ -82,6 +88,12 @@
 (use-package go-mode
   :ensure t)
 
+
+(use-package helm-lsp
+  :ensure t
+  :after (lsp-mode)
+  :commands (helm-lsp-workspace-symbol)
+  :init (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
 (defun bc/crux-duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
