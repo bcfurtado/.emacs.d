@@ -51,6 +51,9 @@
 ;; Highlight current line
 (global-hl-line-mode 0)
 
+;; Show trailing whitespaces
+(setq show-trailing-whitespace t)
+
 ;; This package allow us hide or abbreviate the mode line displays of
 ;; minor-modes.
 (use-package diminish
