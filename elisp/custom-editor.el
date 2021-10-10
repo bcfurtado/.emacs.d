@@ -192,5 +192,6 @@
 
 ;; Do not automatically update buffers when the file change on disk
 (global-auto-revert-mode 0)
+(diminish 'auto-revert-mode)
 
 (provide 'custom-editor)
