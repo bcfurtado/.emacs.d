@@ -59,4 +59,22 @@
 
 (add-hook 'mmm-mode-hook 'my-mmm-mode-hook)
 
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+          (typescript-mode . tide-hl-identifier-mode)
+          (before-save . tide-format-before-save))
+  :config
+  (require 'web-mode)
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  (add-hook 'web-mode-hook
+    (lambda ()
+      (when (string-equal "tsx" (file-name-extension buffer-file-name))
+        (setup-tide-mode))))
+  (flycheck-add-mode 'typescript-tslint 'web-mode)
+  (setq typescript-indent-level 2))
+
+
+
 (provide 'custom-javascript)
