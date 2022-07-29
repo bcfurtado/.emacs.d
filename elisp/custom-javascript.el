@@ -44,14 +44,20 @@
   (js2r-add-keybindings-with-prefix "C-c C-m"))
 
 
-(use-package vue-mode
-  :ensure t
-  :mode "\\.vue\\'"
-  :config
-  (setq mmm-submode-decoration-level 0))
+(defun web-mode-my-preferences-hook ()
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-script-padding 0))
+
 
 (use-package web-mode
-  :ensure t)
+  :ensure t
+  :mode "\\.vue\\'"
+  :bind (:map web-mode-map
+          ("C-<f9>" . bc/javascript--add-debugger)
+          ("C-M-<f9>" . bc/javascript--remove-all-debugger))
+  :hook ((#'web-mode-my-preferences-hook . #'web-mode)))
 
 (defun my-mmm-mode-hook ()
   (editorconfig-apply)
