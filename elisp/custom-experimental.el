@@ -32,7 +32,10 @@
   :commands (treemacs)
   :after (lsp-mode))
 
-(use-package yasnippet :config (yas-global-mode))
+(use-package yasnippet
+  :diminish yas-minor-mode
+  :config (yas-global-mode))
+
 (use-package yasnippet-snippets :ensure t)
 
 (use-package hydra
