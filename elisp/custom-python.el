@@ -45,10 +45,7 @@
           ("C-C C-t j" . bc/python--jump-to-test)
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
-  (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv)
-  (require 'lsp-python-ms)
-  (setq lsp-python-ms-auto-install-server t)
-  (add-hook 'python-mode-hook #'lsp))
+  (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
 
 (use-package pyvenv
   :ensure t)
