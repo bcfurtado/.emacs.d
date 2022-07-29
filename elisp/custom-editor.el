@@ -100,7 +100,13 @@
   :ensure t
   :diminish undo-tree-mode
   :config
-  (global-undo-tree-mode))
+  (global-undo-tree-mode)
+  (setq undo-tree-visualizer-relative-timestamps t
+        undo-tree-visualizer-timestamps t
+        undo-tree-visualizer-diff t
+        undo-tree-auto-save-history t
+        undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))
+        undo-tree-enable-undo-in-region nil))
 
 (use-package subword
   :diminish subword-mode
