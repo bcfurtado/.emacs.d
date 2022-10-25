@@ -120,5 +120,10 @@ there's a region, all lines that region covers will be duplicated."
   (setq sml/theme 'dark)
   (sml/setup))
 
+(use-package dotenv-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
+
 
 (provide 'custom-experimental)
