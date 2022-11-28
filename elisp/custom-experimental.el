@@ -125,6 +125,10 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
 
+(use-package terraform-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.tf'" . terraform-mode)))
 
 (use-package plantuml-mode
   :ensure t
