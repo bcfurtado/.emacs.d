@@ -126,4 +126,16 @@ there's a region, all lines that region covers will be duplicated."
   (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
 
 
+(use-package plantuml-mode
+  :ensure t
+  :config
+  (setq plantuml-jar-path "/Users/bruno/bin/plantuml-1.2022.12.jar")
+  (setq plantuml-default-exec-mode 'jar)
+  (setq plantuml-indent-level 2)
+  (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+  (add-to-list 'auto-mode-alist '("\\.uml\\'" . plantuml-mode))
+  (add-to-list 'display-buffer-alist
+    '("*PLANTUML Preview*" display-buffer-reuse-window)))
+
 (provide 'custom-experimental)
