@@ -130,6 +130,9 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (add-to-list 'auto-mode-alist '("\\.tf'" . terraform-mode)))
 
+(use-package json-mode
+  :ensure t)
+
 (use-package plantuml-mode
   :ensure t
   :config
@@ -141,5 +144,6 @@ there's a region, all lines that region covers will be duplicated."
   (add-to-list 'auto-mode-alist '("\\.uml\\'" . plantuml-mode))
   (add-to-list 'display-buffer-alist
     '("*PLANTUML Preview*" display-buffer-reuse-window)))
+
 
 (provide 'custom-experimental)
