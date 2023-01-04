@@ -143,7 +143,7 @@ there's a region, all lines that region covers will be duplicated."
   (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
   (add-to-list 'auto-mode-alist '("\\.uml\\'" . plantuml-mode))
   (add-to-list 'display-buffer-alist
-    '("*PLANTUML Preview*" display-buffer-reuse-window)))
+    '("*PLANTUML Preview*" display-buffer-same-window)))
 
 
 (provide 'custom-experimental)
