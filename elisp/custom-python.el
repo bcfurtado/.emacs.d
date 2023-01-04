@@ -22,12 +22,6 @@
   (pyimport-remove-unused)
   (py-isort-buffer))
 
-(use-package lsp-python-ms
-  :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda () (require 'lsp-python-ms) (lsp))))
-
-
 (use-package python
   :init
   (require 'python)
@@ -45,7 +39,14 @@
           ("C-C C-t j" . bc/python--jump-to-test)
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
-  (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv))
+  (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv)
+  (add-hook 'python-mode-hook
+    (lambda () (setq lsp-pylsp-configuration-sources ["flake8"]
+                 lsp-pylsp-plugins-yapf-enabled nil
+                 lsp-pylsp-plugins-mccabe-enabled nil
+                 lsp-pylsp-plugins-pycodestyle-enabled nil
+                 lsp-pylsp-plugins-pydocstyle-enabled nil)))
+  (add-hook 'python-mode-hook #'lsp))
 
 (use-package pyvenv
   :ensure t)
