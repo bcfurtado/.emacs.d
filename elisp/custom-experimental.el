@@ -128,7 +128,9 @@ there's a region, all lines that region covers will be duplicated."
 (use-package terraform-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.tf'" . terraform-mode)))
+  (add-to-list 'auto-mode-alist '("\\.tf'" . terraform-mode))
+  (add-hook 'terraform-mode-hook 'terraform-format-on-save-mode)
+  (add-hook 'terraform-mode-hook 'lsp-mode))
 
 (use-package json-mode
   :ensure t)
