@@ -17,12 +17,5 @@
   (package-install 'use-package))
 
 (require 'use-package)
-
-(unless (package-installed-p 'quelpa)
-  (with-temp-buffer
-    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
-    (eval-buffer)
-    (quelpa-self-upgrade)))
-
 (provide 'custom-pm-setup)
 ;;; custom-pm-setup.el ends here

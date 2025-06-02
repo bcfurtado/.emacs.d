@@ -3,13 +3,10 @@
 (use-package py-isort
   :ensure t)
 
-(quelpa
-  '(django-test-runner
-     :fetcher git
-     :url "https://github.com/bcfurtado/django-test-runner.el.git"))
-
-
-(require 'django-test-runner)
+(use-package django-test
+  :ensure t
+  :vc (:url "https://github.com/bcfurtado/django-test-runner.el"
+        :rev :newest))
 
 (use-package yapfify
   :ensure t)
@@ -25,11 +22,10 @@
 (use-package python
   :init
   (require 'python)
-  :after (django-test-runner)
   :bind (:map python-mode-map
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
-          ("<f10>" . django-test-runner)
+          ("<f10>" . django-test)
           ("C-M-f" . sp-forward-sexp)
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t f" . yapfify-region)
