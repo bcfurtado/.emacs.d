@@ -3,7 +3,7 @@
 (use-package py-isort
   :ensure t)
 
-(use-package django-test
+(use-package django-test-runner
   :ensure t
   :vc (:url "https://github.com/bcfurtado/django-test-runner.el"
         :rev :newest))
@@ -25,7 +25,7 @@
   :bind (:map python-mode-map
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
-          ("<f10>" . django-test)
+          ("<f10>" . django-test-runner)
           ("C-M-f" . sp-forward-sexp)
           ("C-M-b" . sp-backward-sexp)
           ("C-c C-t f" . yapfify-region)
