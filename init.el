@@ -37,3 +37,5 @@
 
 (setq compilation-scroll-output t)
 (server-start)
+
+(global-display-line-numbers-mode 1)

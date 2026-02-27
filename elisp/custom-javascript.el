@@ -60,8 +60,7 @@
   :hook ((#'web-mode-my-preferences-hook . #'web-mode)))
 
 (defun my-mmm-mode-hook ()
-  (editorconfig-apply)
-  (linum-mode +1))
+  (editorconfig-apply))
 
 (add-hook 'mmm-mode-hook 'my-mmm-mode-hook)
 

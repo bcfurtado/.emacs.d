@@ -81,11 +81,6 @@
          ("C-c R" . crux-rename-file-and-buffer)
          ("C-c D" . crux-delete-file-and-buffer)))
 
-(use-package linum
-  :config
-  (setq linum-format " %3d ")
-  (add-hook 'prog-mode-hook 'linum-mode))
-
 (use-package which-key
   :ensure t
   :diminish which-key-mode
