@@ -35,7 +35,7 @@
           ("C-C C-t j" . bc/python--jump-to-test)
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
-  (add-hook 'python-mode-hook #'auto-virtualenv-set-virtualenv)
+  (add-hook 'python-mode-hook #'auto-virtualenv-setup)
   (add-hook 'python-mode-hook
     (lambda () (setq lsp-pylsp-configuration-sources ["flake8"]
                  lsp-pylsp-plugins-yapf-enabled nil
