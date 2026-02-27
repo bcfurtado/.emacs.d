@@ -66,6 +66,7 @@
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   (java-mode . #'lsp-deferred)
+  (java-ts-mode . #'lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-file-watchers nil)
@@ -77,7 +78,6 @@
   (setq lsp-ui-doc-enable nil)
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-sideline-show-code-actions nil)
-  (setq lsp-ui-sideline-enable nil)
 
   (with-eval-after-load 'lsp-intelephense
     (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))

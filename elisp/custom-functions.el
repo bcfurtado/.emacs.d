@@ -100,8 +100,8 @@ pull-request url so it can be open on the browser"
   (find-file-other-window (expand-file-name "init.el" user-emacs-directory)))
 
 ;; from emacs 26.3
-(eval-after-load "rect"
-  '(defun rectangle--default-line-number-format (start end start-at)
+(with-eval-after-load 'rect
+  (defun rectangle--default-line-number-format (start end start-at)
      (concat "%"
        (int-to-string (length (int-to-string (+ (count-lines start end)
                                                start-at))))
@@ -113,7 +113,7 @@ pull-request url so it can be open on the browser"
   "If point is after certain chars transpose chunks around that.
 Otherwise transpose sexps."
   (interactive "*")
-  (if (not (looking-back "[,]\\s-*" (point-at-bol)))
+  (if (not (looking-back "[,]\\s-*" (line-beginning-position)))
       (progn (transpose-sexps 1) (forward-sexp -1))
     (let ((beg (point)) end rhs lhs)
       (while (and (not (eobp))
@@ -124,7 +124,7 @@ Otherwise transpose sexps."
       (re-search-backward "[,]\\s-*" nil t)
       (setq beg (point))
       (while (and (not (bobp))
-                  (not (looking-back "\\([,]\\|\\s(\\)\\s-*" (point-at-bol))))
+                  (not (looking-back "\\([,]\\|\\s(\\)\\s-*" (line-beginning-position))))
         (forward-sexp -1))
       (setq lhs (buffer-substring beg (point)))
       (delete-region beg (point))
