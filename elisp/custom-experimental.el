@@ -147,5 +147,11 @@ there's a region, all lines that region covers will be duplicated."
   (add-to-list 'display-buffer-alist
     '("*PLANTUML Preview*" display-buffer-same-window)))
 
+(use-package hurl-mode
+  :ensure t
+  :mode "\\.hurl\\'"
+  :vc (:url "https://github.com/JasZhe/hurl-mode"
+        :rev :newest))
+
 
 (provide 'custom-experimental)
