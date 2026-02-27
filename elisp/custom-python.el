@@ -19,10 +19,18 @@
   (pyimport-remove-unused)
   (py-isort-buffer))
 
+(defun bc/python-lsp-setup ()
+  "Configure pylsp settings for the current buffer."
+  (setq lsp-pylsp-configuration-sources ["flake8"]
+        lsp-pylsp-plugins-yapf-enabled nil
+        lsp-pylsp-plugins-mccabe-enabled nil
+        lsp-pylsp-plugins-pycodestyle-enabled nil
+        lsp-pylsp-plugins-pydocstyle-enabled nil))
+
 (use-package python
   :init
   (require 'python)
-  :bind (:map python-mode-map
+  :bind (:map python-base-mode-map
           ("C-<f9>" . mw/python--add-pudb-breakpoint)
           ("C-M-<f9>" . mw/python--remove-breakpoints)
           ("<f10>" . django-test-runner)
@@ -36,13 +44,11 @@
           ("C-M-t" . scottfrazer/transpose-sexps))
   :config
   (add-hook 'python-mode-hook #'auto-virtualenv-setup)
-  (add-hook 'python-mode-hook
-    (lambda () (setq lsp-pylsp-configuration-sources ["flake8"]
-                 lsp-pylsp-plugins-yapf-enabled nil
-                 lsp-pylsp-plugins-mccabe-enabled nil
-                 lsp-pylsp-plugins-pycodestyle-enabled nil
-                 lsp-pylsp-plugins-pydocstyle-enabled nil)))
-  (add-hook 'python-mode-hook #'lsp))
+  (add-hook 'python-mode-hook #'bc/python-lsp-setup)
+  (add-hook 'python-mode-hook #'lsp)
+  (add-hook 'python-ts-mode-hook #'auto-virtualenv-setup)
+  (add-hook 'python-ts-mode-hook #'bc/python-lsp-setup)
+  (add-hook 'python-ts-mode-hook #'lsp))
 
 (use-package pyvenv
   :ensure t)

@@ -26,6 +26,7 @@
 (require 'custom-javascript)
 (require 'custom-org-mode)
 (require 'custom-experimental)
+(require 'custom-treesitter)
 (require 'custom-ui)
 
 ;; after start up

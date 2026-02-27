@@ -31,6 +31,7 @@ bookmarks
 srecode-map.el
 todo/
 transient/
+tree-sitter/
 
 ## lsp
 .cache/
@@ -39,8 +40,3 @@ transient/
 ### lsp-java
 eclipse.jdt.ls/
 workspace/
-
-
-straight/
-
-.cask/
