@@ -54,6 +54,19 @@
 ;; Show trailing whitespaces
 (setq show-trailing-whitespace t)
 
+;; Make tabs visible and distinguishable
+(use-package whitespace
+  :ensure t
+  :config
+  ;; Tabs appear as 4 spaces
+  (setq-default tab-width 4)
+  ;; Show tabs with a longer marker
+  (setq whitespace-style '(face tabs tab-mark))
+  ;; Custom tab marker: ▶▶▶▶
+  (setq whitespace-display-mappings '((tab-mark 9 [9655 9655 9655 9655] [92 9])))
+  ;; Enable whitespace-mode globally
+  (global-whitespace-mode 1))
+
 ;; This package allow us hide or abbreviate the mode line displays of
 ;; minor-modes.
 (use-package diminish
