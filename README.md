@@ -10,11 +10,11 @@ $ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
 
 ## requirements
 
-- emacs >= 26
+- emacs >= 30
 
 ### installing
 ```
-$ brew cask install emacs
+$ brew install emacs
 ```
 
 ### optional requirements
