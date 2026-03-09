@@ -24,7 +24,16 @@
   (mapc #'treesit-install-language-grammar
         (mapcar #'car treesit-language-source-alist)))
 
+(defun bc/treesit-install-missing-grammars ()
+  "Install tree-sitter grammars that are not yet available."
+  (mapc (lambda (lang)
+          (unless (treesit-language-available-p lang)
+            (treesit-install-language-grammar lang)))
+        (mapcar #'car treesit-language-source-alist)))
+
 (when (treesit-available-p)
+  (bc/treesit-install-missing-grammars)
+
   (setq major-mode-remap-alist
     '((python-mode . python-ts-mode)
       (json-mode   . json-ts-mode)
