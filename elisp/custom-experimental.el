@@ -153,5 +153,13 @@ there's a region, all lines that region covers will be duplicated."
   :vc (:url "https://github.com/JasZhe/hurl-mode"
         :rev :newest))
 
+(use-package sops
+  :ensure (:type git :host github :repo "djgoku/sops")
+  :bind (("C-c C-c" . sops-save-file)
+         ("C-c C-k" . sops-cancel)
+         ("C-c C-d" . sops-edit-file))
+  :init
+  (setq sops-before-encrypt-decrypt-hook 'sops-setup-env)
+  (global-sops-mode 1))
 
 (provide 'custom-experimental)
