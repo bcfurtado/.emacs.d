@@ -154,7 +154,8 @@ there's a region, all lines that region covers will be duplicated."
         :rev :newest))
 
 (use-package sops
-  :ensure (:type git :host github :repo "djgoku/sops")
+  :ensure t
+  :vc (:url "https://github.com/djgoku/sops" :rev :newest)
   :bind (("C-c C-c" . sops-save-file)
          ("C-c C-k" . sops-cancel)
          ("C-c C-d" . sops-edit-file))
