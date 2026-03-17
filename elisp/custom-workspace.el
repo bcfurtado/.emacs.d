@@ -7,7 +7,7 @@
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (setq projectile-completion-system 'ivy)
-  (setq projectile-switch-project-action 'projectile-find-dir))
+  (setq projectile-switch-project-action 'projectile-dired))
 
 (use-package rg
   :ensure t
