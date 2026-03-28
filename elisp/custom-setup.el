@@ -13,6 +13,11 @@
   (setq exec-path-from-shell-variables '("PATH"))
   (exec-path-from-shell-initialize))
 
+;; This package allow us hide or abbreviate the mode line displays of
+;; minor-modes.
+(use-package diminish
+  :ensure t)
+
 (when *is-a-linux*
   (setq x-super-keysym 'meta))		; Set Super key as Meta
 

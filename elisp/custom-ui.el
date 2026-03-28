@@ -67,10 +67,6 @@
   ;; Enable whitespace-mode globally
   (global-whitespace-mode 1))
 
-;; This package allow us hide or abbreviate the mode line displays of
-;; minor-modes.
-(use-package diminish
-  :ensure t)
 
 ;; Display full file path at the title bar when available
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
