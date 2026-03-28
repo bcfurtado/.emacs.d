@@ -3,9 +3,9 @@
 ## install
 
 ```sh
-$ mkdir ~/emacs
-$ git clone git@github.com:bcfurtado/.emacs.d.git ~/emacs/emacs-bcfurtado
-$ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
+$ mkdir ~/projects/github.com/bcfurtado
+$ git clone git@github.com:bcfurtado/.emacs.d.git ~/projects/github.com/bcfurtado/emacs-bcfurtado
+$ ln -s ~/projects/github.com/bcfurtado/emacs-bcfurtado/install-macos.sh
 ```
 
 ## requirements
@@ -14,7 +14,7 @@ $ ln -s ~/emacs/emacs-bcfurtado ~/.emacs.d
 
 ### installing
 ```
-$ brew install emacs
+$ brew install emacs-app
 ```
 
 ### optional requirements
