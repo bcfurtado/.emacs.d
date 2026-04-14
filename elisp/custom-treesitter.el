@@ -16,7 +16,8 @@
     (json       . ("https://github.com/tree-sitter/tree-sitter-json"))
     (css        . ("https://github.com/tree-sitter/tree-sitter-css"))
     (bash       . ("https://github.com/tree-sitter/tree-sitter-bash"))
-    (java       . ("https://github.com/tree-sitter/tree-sitter-java"))))
+    (java       . ("https://github.com/tree-sitter/tree-sitter-java"))
+    (php        . ("https://github.com/tree-sitter/tree-sitter-php" "master" "php/src"))))
 
 (defun bc/treesit-install-all-grammars ()
   "Install all configured tree-sitter language grammars."
@@ -39,7 +40,13 @@
       (json-mode   . json-ts-mode)
       (css-mode    . css-ts-mode)
       (bash-mode   . bash-ts-mode)
-      (java-mode   . java-ts-mode))))
+      (java-mode   . java-ts-mode)
+      (php-mode    . php-ts-mode))))
+
+(use-package php-ts-mode
+  :ensure t
+  :when (treesit-available-p)
+  :mode "\\.php\\'")
 
 (provide 'custom-treesitter)
 ;;; custom-treesitter.el ends here
