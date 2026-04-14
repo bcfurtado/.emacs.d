@@ -10,4 +10,9 @@
 (use-package package-lint
   :ensure t)
 
+(use-package csv-mode
+  :ensure t
+  :hook (csv-mode . csv-align-mode))
+
+
 (provide 'custom-misc)
