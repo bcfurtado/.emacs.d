@@ -133,7 +133,10 @@ there's a region, all lines that region covers will be duplicated."
   (add-hook 'terraform-mode-hook 'lsp-mode))
 
 (use-package json-mode
-  :ensure t)
+  :ensure t
+  :hook (json-mode . hs-minor-mode)
+  :bind (:map json-mode-map
+              ("C-c C-f" . hs-toggle-hiding)))
 
 (use-package plantuml-mode
   :ensure t

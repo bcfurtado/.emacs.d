@@ -43,6 +43,14 @@
       (java-mode   . java-ts-mode)
       (php-mode    . php-ts-mode))))
 
+
+(use-package json-ts-mode
+  :ensure t
+  :when (treesit-available-p)
+  :hook (json-ts-mode . hs-minor-mode)
+  :bind (:map json-ts-mode-map
+          ("C-c C-f" . hs-toggle-hiding)))
+
 (use-package php-ts-mode
   :ensure t
   :when (treesit-available-p)
