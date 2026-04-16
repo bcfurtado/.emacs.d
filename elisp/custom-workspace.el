@@ -12,6 +12,7 @@
 (use-package rg
   :ensure t
   :config
+  (setq rg-command-line-flags '("--hidden"))
   (rg-enable-default-bindings (kbd "C-c s o"))
   (define-key projectile-mode-map (kbd "C-c p s r") 'rg-project))
 
